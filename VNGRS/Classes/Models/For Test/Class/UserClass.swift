@@ -1,5 +1,5 @@
 //
-//  CodableEntity.swift
+//  UserModel.swift
 //  VNGRS
 //
 //  Created by omer kantar on 30.10.2018.
@@ -8,5 +8,8 @@
 
 import UIKit
 
+class UserClass: Codable {
 
-
+    var id: Int = 0
+    var name: String?
+}

@@ -11,13 +11,29 @@ import UIKit
 class SearchViewController: BaseViewController {
 
     
+
     
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        SearchService.shared.request(target: SearchService.SearchTarget.keyword(query: "moya", page: 1, perPage: 10), type: SearchModel.self) { (result) in
+            
+            switch result {
+                
+            case .success(let response):
+                
+                break
+                
+            case .failure(let error, let isMappingError):
+                break
+            }
+        }
     }
     
 
+    override func isShowingNavigationBar() -> Bool {
+        return false
+    }
 
 }

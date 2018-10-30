@@ -13,14 +13,15 @@
             }
         },
         {
-            "id": "1",
-            "name": 3132131,
-            "surname": null,
-            "photo": true,
+            "id": 1,
+            "name": "Refik",
+            "surname": "Anadol",
+            "photo": "",
+            "createdDate": null,
             "social": {
-                "twitter": false,
+                "twitter": "",
                 "facebook": "",
-                "instagram": null
+                "instagram": ""
             }
         }
     ]

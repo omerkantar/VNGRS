@@ -13,7 +13,14 @@ class WindowManager: NSObject {
     
     static func applicationDidFinishLaunchOptions() {
         
+        let delegate = appDelegate()
+        delegate.window = UIWindow(frame: UIScreen.main.bounds)
+        delegate.window?.backgroundColor = .black
+        delegate.window?.layer.masksToBounds = true
+        delegate.window?.layer.cornerRadius = 4.0
+        delegate.window?.rootViewController = UIViewController.fromNavigationController(identifier: .search)
         
+        delegate.window?.makeKeyAndVisible()
     }
     
     
@@ -24,7 +31,9 @@ class WindowManager: NSObject {
     
     // root view controller olusturulacak
     static func rootViewController() -> SearchViewController? {
+        //
         let nc = appDelegate().window?.rootViewController as? UINavigationController
+        // search ilk eleman olacak
         let vc = nc?.viewControllers.first
         
         guard vc is SearchViewController else {

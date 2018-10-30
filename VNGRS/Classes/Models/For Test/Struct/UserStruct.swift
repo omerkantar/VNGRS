@@ -25,9 +25,9 @@ struct UserEntity: Codable {
     
     var id: Int = -1
     var name: String?
-    var surname: String
-    var photoUrl: String
-    var createdDate: String
+    var surname: String?
+    var photoUrl: String?
+    var createdDate: String?
 
     //Custom Keys
     enum CodingKeys: String, CodingKey {

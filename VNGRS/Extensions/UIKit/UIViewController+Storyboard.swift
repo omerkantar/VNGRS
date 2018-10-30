@@ -49,4 +49,9 @@ extension UIViewController {
     static func fromNavigationController(identifier: Identifier) -> UINavigationController {
         return UINavigationController(rootViewController: initialize(from: identifier))
     }
+   
+    
+    func push(viewController: UIViewController) {
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
 }
