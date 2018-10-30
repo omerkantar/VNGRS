@@ -12,7 +12,8 @@ class WindowManager: NSObject {
 
     
     static func applicationDidFinishLaunchOptions() {
-        let nc = UINavigationController()
+        
+        
     }
     
     
