@@ -1,0 +1,27 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "Refik",
+            "surname": "Anadol",
+            "photo": "",
+            "createdDate": null,
+            "social": {
+                "twitter": "",
+                "facebook": "",
+                "instagram": ""
+            }
+        },
+        {
+            "id": "1",
+            "name": 3132131,
+            "surname": null,
+            "photo": true,
+            "social": {
+                "twitter": false,
+                "facebook": "",
+                "instagram": null
+            }
+        }
+    ]
+}

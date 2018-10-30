@@ -1,0 +1,6 @@
+framework module Pods_VNGRSTests {
+  umbrella header "Pods-VNGRSTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
