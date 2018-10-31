@@ -11,12 +11,10 @@ import Moya
 
 
 extension SearchService {
-    public enum SearchTarget: TargetType {
+    public enum SearchTarget: TargetType, TargetParametersInjector {
+        
+        
         case keyword(query: String, page: Int, perPage: Int)
-
-        public var baseURL: URL {
-            return Service.baseURL
-        }
         
         public var path: String {
             switch self {
@@ -36,26 +34,6 @@ extension SearchService {
             return Moya.Method.get
         }
         
-        public var sampleData: Data {
-            return Data()
-        }
-        
-        var task: Task {
-            if let parameters = parameters {
-                if method == .post || method == .put {
-                    return Task.requestParameters(parameters: parameters, encoding: JSONEncoding.default)
-                }
-                return Task.requestParameters(parameters: parameters, encoding: URLEncoding.default)
-            }
-            return Task.requestPlain
-        }
-        
-        public var headers: [String : String]? {
-            return nil
-        }
-        
-        
-        
     }
 }
 
@@ -65,5 +43,6 @@ struct SearchService: ServiceInjector {
     typealias Target = SearchTarget
 
     static var shared = SearchService()
+    
     
 }

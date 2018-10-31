@@ -9,7 +9,7 @@
 import UIKit
 
 
-protocol ViewInjector {
+protocol RouterDataSourceInjector {
     associatedtype DataSource
     associatedtype ViewModel
     var viewModel: ViewModel { set get }

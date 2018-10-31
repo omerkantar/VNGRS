@@ -49,3 +49,40 @@ extension ServiceInjector {
         }
     }
 }
+
+
+
+protocol TargetParametersInjector {
+    var parameters: [String: Any]? { get }
+}
+
+extension TargetParametersInjector {
+    func getTask(method: Moya.Method) -> Task {
+        if let parameters = parameters {
+            if method == .post || method == .put {
+                return Task.requestParameters(parameters: parameters, encoding: JSONEncoding.default)
+            }
+            return Task.requestParameters(parameters: parameters, encoding: URLEncoding.default)
+        }
+        return Task.requestPlain
+    }
+}
+
+
+extension TargetType {
+    public var sampleData: Data {
+        return Data()
+    }
+    
+    public var baseURL: URL {
+        return Service.baseURL
+    }
+
+    public var headers: [String : String]? {
+        return nil
+    }
+    
+    public var task: Task {
+        return (self as? TargetParametersInjector)?.getTask(method: method) ?? .requestPlain
+    }
+}

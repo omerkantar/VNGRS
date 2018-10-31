@@ -22,6 +22,12 @@
 		4E36A9652188D68800F02A1B /* SearchProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E36A9642188D68800F02A1B /* SearchProvider.swift */; };
 		4E36A9672188D6B000F02A1B /* ServiceInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E36A9662188D6B000F02A1B /* ServiceInjector.swift */; };
 		4E36A96F2188EE0A00F02A1B /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E36A96E2188EE0A00F02A1B /* SearchModel.swift */; };
+		4E36A9712188F93300F02A1B /* SearchComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E36A9702188F93300F02A1B /* SearchComponent.swift */; };
+		4E36A9732189848800F02A1B /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E36A9722189848800F02A1B /* SearchViewModel.swift */; };
+		4E36A9752189849D00F02A1B /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E36A9742189849D00F02A1B /* ViewModel.swift */; };
+		4E36A9792189878C00F02A1B /* RepositoryCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E36A9782189878C00F02A1B /* RepositoryCellModel.swift */; };
+		4E36A97C218988A200F02A1B /* SearchComponent.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E36A97B218988A200F02A1B /* SearchComponent.xib */; };
+		4E36A97E21898D1900F02A1B /* SearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E36A97D21898D1900F02A1B /* SearchManager.swift */; };
 		4EFB057A2188288700369E89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFB05792188288700369E89 /* AppDelegate.swift */; };
 		4EFB057F2188288700369E89 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EFB057D2188288700369E89 /* Search.storyboard */; };
 		4EFB05812188288800369E89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EFB05802188288800369E89 /* Assets.xcassets */; };
@@ -74,6 +80,12 @@
 		4E36A9642188D68800F02A1B /* SearchProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProvider.swift; sourceTree = "<group>"; };
 		4E36A9662188D6B000F02A1B /* ServiceInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceInjector.swift; sourceTree = "<group>"; };
 		4E36A96E2188EE0A00F02A1B /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
+		4E36A9702188F93300F02A1B /* SearchComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchComponent.swift; sourceTree = "<group>"; };
+		4E36A9722189848800F02A1B /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		4E36A9742189849D00F02A1B /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		4E36A9782189878C00F02A1B /* RepositoryCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCellModel.swift; sourceTree = "<group>"; };
+		4E36A97B218988A200F02A1B /* SearchComponent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchComponent.xib; sourceTree = "<group>"; };
+		4E36A97D21898D1900F02A1B /* SearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchManager.swift; sourceTree = "<group>"; };
 		4EFB05762188288700369E89 /* VNGRS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VNGRS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EFB05792188288700369E89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4EFB057E2188288700369E89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Search.storyboard; sourceTree = "<group>"; };
@@ -132,6 +144,7 @@
 		4E36A94C2188B63A00F02A1B /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				4E36A97D21898D1900F02A1B /* SearchManager.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -194,6 +207,15 @@
 			isa = PBXGroup;
 			children = (
 				4E36A96E2188EE0A00F02A1B /* SearchModel.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		4E36A97A2189888F00F02A1B /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				4E36A9702188F93300F02A1B /* SearchComponent.swift */,
+				4E36A97B218988A200F02A1B /* SearchComponent.xib */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -272,6 +294,9 @@
 		4EFB05A82188289A00369E89 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				4E36A9782189878C00F02A1B /* RepositoryCellModel.swift */,
+				4E36A9722189848800F02A1B /* SearchViewModel.swift */,
+				4E36A9742189849D00F02A1B /* ViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -306,6 +331,7 @@
 		4EFB05AC218828BF00369E89 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				4E36A97A2189888F00F02A1B /* Search */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -548,6 +574,7 @@
 				4EFB05812188288800369E89 /* Assets.xcassets in Resources */,
 				4E36A9612188D4EF00F02A1B /* jakeWhartonRepos.json in Resources */,
 				4EFB057F2188288700369E89 /* Search.storyboard in Resources */,
+				4E36A97C218988A200F02A1B /* SearchComponent.xib in Resources */,
 				4E36A95A2188CA2600F02A1B /* Repository.storyboard in Resources */,
 				4EFB05C72188432300369E89 /* users.json in Resources */,
 			);
@@ -664,12 +691,17 @@
 				4EFB05C321883E4900369E89 /* Mock.swift in Sources */,
 				4E36A9522188B67600F02A1B /* Router.swift in Sources */,
 				4E36A9492188B62400F02A1B /* RepositoryDetailViewController.swift in Sources */,
+				4E36A97E21898D1900F02A1B /* SearchManager.swift in Sources */,
+				4E36A9792189878C00F02A1B /* RepositoryCellModel.swift in Sources */,
 				4E36A9652188D68800F02A1B /* SearchProvider.swift in Sources */,
 				4EFB057A2188288700369E89 /* AppDelegate.swift in Sources */,
+				4E36A9712188F93300F02A1B /* SearchComponent.swift in Sources */,
+				4E36A9752189849D00F02A1B /* ViewModel.swift in Sources */,
 				4E36A9502188B66D00F02A1B /* WindowManager.swift in Sources */,
 				4E36A94B2188B63000F02A1B /* UserDetailViewController.swift in Sources */,
 				4EFB05BD21882AB300369E89 /* UserStruct.swift in Sources */,
 				4E36A9672188D6B000F02A1B /* ServiceInjector.swift in Sources */,
+				4E36A9732189848800F02A1B /* SearchViewModel.swift in Sources */,
 				4E36A9452188B5F200F02A1B /* BaseViewController.swift in Sources */,
 				4E36A95C2188CA8E00F02A1B /* UIViewController+Storyboard.swift in Sources */,
 			);
