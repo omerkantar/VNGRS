@@ -7,11 +7,17 @@ PODS:
     - Alamofire (~> 4.1)
     - Result (~> 4.0)
   - Result (4.0.0)
+  - RxCocoa (4.3.1):
+    - RxSwift (~> 4.0)
+  - RxGesture (2.0.1):
+    - RxCocoa (~> 4.3.1)
+    - RxSwift (~> 4.3.1)
   - RxSwift (4.3.1)
 
 DEPENDENCIES:
   - Kingfisher (~> 4.10)
   - Moya (= 12.0.0-beta.1)
+  - RxGesture
   - RxSwift (~> 4.3)
 
 SPEC REPOS:
@@ -20,6 +26,8 @@ SPEC REPOS:
     - Kingfisher
     - Moya
     - Result
+    - RxCocoa
+    - RxGesture
     - RxSwift
 
 SPEC CHECKSUMS:
@@ -27,8 +35,10 @@ SPEC CHECKSUMS:
   Kingfisher: 43c4b802d8b5256cf1f4379e9cd10b329be6d3e2
   Moya: 1b8d16b4dac4302c323ca95077a733836e73484a
   Result: 7645bb3f50c2ce726dd0ff2fa7b6f42bbe6c3713
+  RxCocoa: 78763c7b07d02455598d9fc3c1ad091a28b73635
+  RxGesture: 26ede4ed13ffc6336d29dbd9a8dff229bdb72de7
   RxSwift: fe0fd770a43acdb7d0a53da411c9b892e69bb6e4
 
-PODFILE CHECKSUM: 422e4b070a48dd58abff3af380a9f014f24aef0e
+PODFILE CHECKSUM: 865db8736a914da93be4df03e9510ac730991b5f
 
 COCOAPODS: 1.5.3

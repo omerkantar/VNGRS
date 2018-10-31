@@ -15,6 +15,7 @@ end
 
 def utility_pods
   pod 'RxSwift', '~> 4.3'
+  pod 'RxGesture'
 end
 
 

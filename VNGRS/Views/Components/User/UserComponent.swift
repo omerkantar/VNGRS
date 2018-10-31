@@ -8,9 +8,20 @@
 
 import UIKit
 
+
+
 class UserComponent: UIView {
 
-    @IBOutlet weak var imageView: UIImageView?
-    @IBOutlet weak var nameLabel: UILabel?
-
+    // Repository ile ortak olan interface builder outlets
+    @IBOutlet weak var imageView: ImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    //
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        
+    }
+    
+    
 }
