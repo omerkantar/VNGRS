@@ -17,8 +17,7 @@ class SearchComponent: UIView {
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var gradientView: UIView!
     
-    
-    
+
     
     // Initialize
     override func awakeFromNib() {
@@ -27,5 +26,6 @@ class SearchComponent: UIView {
     }
 
 
+    
     
 }
