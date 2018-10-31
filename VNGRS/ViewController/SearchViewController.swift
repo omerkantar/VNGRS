@@ -10,9 +10,9 @@ import UIKit
 
 class SearchViewController: BaseViewController {
 
-    
+    @IBOutlet weak var tableView: QueerTableView!
 
-    
+
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()

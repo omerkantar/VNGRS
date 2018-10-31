@@ -8,11 +8,13 @@
 
 import UIKit
 
+protocol ViewModelInjector {
+    associatedtype ViewModel
+    var viewModel: ViewModel? { set get }
+}
 
 protocol RouterDataSourceInjector {
     associatedtype DataSource
-    associatedtype ViewModel
-    var viewModel: ViewModel { set get }
     func configuration(dataSource: DataSource) -> Void
 }
 

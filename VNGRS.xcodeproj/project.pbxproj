@@ -41,6 +41,10 @@
 		4E36A99921898F4300F02A1B /* UserComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E36A99821898F4300F02A1B /* UserComponent.swift */; };
 		4E36A99D21898FEB00F02A1B /* KeywordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E36A99B21898FEB00F02A1B /* KeywordTableViewCell.swift */; };
 		4E36A99E21898FEB00F02A1B /* KeywordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E36A99C21898FEB00F02A1B /* KeywordTableViewCell.xib */; };
+		4E36A9A02189931D00F02A1B /* RepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E36A99F2189931D00F02A1B /* RepositoryModel.swift */; };
+		4E36A9A22189933900F02A1B /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E36A9A12189933900F02A1B /* UserModel.swift */; };
+		4E36A9A421899D0E00F02A1B /* OwnerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E36A9A321899D0E00F02A1B /* OwnerModel.swift */; };
+		4E36A9A621899DE100F02A1B /* Repository+Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E36A9A521899DE100F02A1B /* Repository+Language.swift */; };
 		4EFB057A2188288700369E89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFB05792188288700369E89 /* AppDelegate.swift */; };
 		4EFB057F2188288700369E89 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EFB057D2188288700369E89 /* Search.storyboard */; };
 		4EFB05812188288800369E89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EFB05802188288800369E89 /* Assets.xcassets */; };
@@ -112,6 +116,10 @@
 		4E36A99821898F4300F02A1B /* UserComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserComponent.swift; sourceTree = "<group>"; };
 		4E36A99B21898FEB00F02A1B /* KeywordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordTableViewCell.swift; sourceTree = "<group>"; };
 		4E36A99C21898FEB00F02A1B /* KeywordTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeywordTableViewCell.xib; sourceTree = "<group>"; };
+		4E36A99F2189931D00F02A1B /* RepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryModel.swift; sourceTree = "<group>"; };
+		4E36A9A12189933900F02A1B /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		4E36A9A321899D0E00F02A1B /* OwnerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerModel.swift; sourceTree = "<group>"; };
+		4E36A9A521899DE100F02A1B /* Repository+Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Repository+Language.swift"; sourceTree = "<group>"; };
 		4EFB05762188288700369E89 /* VNGRS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VNGRS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EFB05792188288700369E89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4EFB057E2188288700369E89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Search.storyboard; sourceTree = "<group>"; };
@@ -226,6 +234,7 @@
 		4E36A96B2188DEDB00F02A1B /* User */ = {
 			isa = PBXGroup;
 			children = (
+				4E36A9A12189933900F02A1B /* UserModel.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -233,6 +242,9 @@
 		4E36A96C2188EDED00F02A1B /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				4E36A99F2189931D00F02A1B /* RepositoryModel.swift */,
+				4E36A9A321899D0E00F02A1B /* OwnerModel.swift */,
+				4E36A9A521899DE100F02A1B /* Repository+Language.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -329,8 +341,8 @@
 		4EFB05782188288700369E89 /* VNGRS */ = {
 			isa = PBXGroup;
 			children = (
-				4EFB05AE218828D200369E89 /* Libs */,
 				4EFB05B72188294600369E89 /* Mock */,
+				4EFB05AE218828D200369E89 /* Libs */,
 				4E36A9532188B85100F02A1B /* Extensions */,
 				4EFB05AD218828C900369E89 /* Classes */,
 				4EFB05B1218828FA00369E89 /* Router */,
@@ -774,6 +786,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E36A98821898E1A00F02A1B /* UICollectionView+QueerViewBuilder.swift in Sources */,
+				4E36A9A02189931D00F02A1B /* RepositoryModel.swift in Sources */,
 				4EFB05C6218841AD00369E89 /* UserManager.swift in Sources */,
 				4E36A99921898F4300F02A1B /* UserComponent.swift in Sources */,
 				4EFB05B62188293C00369E89 /* UserClass.swift in Sources */,
@@ -782,6 +795,8 @@
 				4EFB05C321883E4900369E89 /* Mock.swift in Sources */,
 				4E36A98A21898E1A00F02A1B /* QueerProtocols.swift in Sources */,
 				4E36A9522188B67600F02A1B /* Router.swift in Sources */,
+				4E36A9A22189933900F02A1B /* UserModel.swift in Sources */,
+				4E36A9A621899DE100F02A1B /* Repository+Language.swift in Sources */,
 				4E36A98E21898E1A00F02A1B /* UICollectionView+CellType.swift in Sources */,
 				4E36A9492188B62400F02A1B /* RepositoryDetailViewController.swift in Sources */,
 				4E36A97E21898D1900F02A1B /* SearchManager.swift in Sources */,
@@ -792,6 +807,7 @@
 				4E36A98C21898E1A00F02A1B /* UIView+Queer.swift in Sources */,
 				4E36A9712188F93300F02A1B /* SearchComponent.swift in Sources */,
 				4E36A9752189849D00F02A1B /* ViewModel.swift in Sources */,
+				4E36A9A421899D0E00F02A1B /* OwnerModel.swift in Sources */,
 				4E36A98B21898E1A00F02A1B /* QueerCollectionView.swift in Sources */,
 				4E36A9502188B66D00F02A1B /* WindowManager.swift in Sources */,
 				4E36A94B2188B63000F02A1B /* UserDetailViewController.swift in Sources */,

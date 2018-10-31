@@ -22,26 +22,3 @@ struct SearchModel: Codable {
 
 }
 
-// TODO: - bu respositoryModel.swift dosyasina konulacak
-struct RepositoryModel: Codable {
-    
-    var id: Int = 0
-    var nodeId: String?
-    var name: String
-    var fullName: String?
-    var createdAt: String?
-    var language: String?
-    var description: String?
-    
-    //Custom Keys
-    enum CodingKeys: String, CodingKey {
-        case id
-        case nodeId = "node_id"
-        case name
-        case fullName = "full_name"
-        case createdAt = "created_at"
-        case language
-        case description
-    }
-    
-}

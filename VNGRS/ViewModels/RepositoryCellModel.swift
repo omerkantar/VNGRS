@@ -10,4 +10,10 @@ import UIKit
 
 class RepositoryCellModel {
 
+    let model: RepositoryModel
+    
+    init(model: RepositoryModel) {
+        self.model = model
+        
+    }
 }
