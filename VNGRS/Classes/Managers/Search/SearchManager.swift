@@ -15,6 +15,7 @@ class SearchManager {
     
     // Signleton
     static var shared = SearchManager()
+    var keywords: [String]?
     
     init() {
         

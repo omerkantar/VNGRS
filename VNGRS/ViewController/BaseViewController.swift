@@ -8,26 +8,30 @@
 
 import UIKit
 
+// MARK: - View Model Injector
 protocol ViewModelInjector {
     associatedtype ViewModel
     var viewModel: ViewModel? { set get }
 }
 
+// MARK: - Router Data Source Injector
+// Router ile gelen data inject edilecek
 protocol RouterDataSourceInjector {
     associatedtype DataSource
     func configuration(dataSource: DataSource) -> Void
 }
 
+
+
 class BaseViewController: UIViewController {
 
-    
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         designingNavigationBar()
     }
     
-    
+    // MARK:
     
 }
 

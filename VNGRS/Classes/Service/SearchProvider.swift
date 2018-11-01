@@ -11,7 +11,7 @@ import Moya
 
 
 extension SearchService {
-    public enum SearchTarget: TargetType, TargetParametersInjector {
+    public enum SearchTarget: TargetType, TargetParametersDataSource {
         
         
         case keyword(query: String, page: Int, perPage: Int)
@@ -43,6 +43,5 @@ struct SearchService: ServiceInjector {
     typealias Target = SearchTarget
 
     static var shared = SearchService()
-    
     
 }

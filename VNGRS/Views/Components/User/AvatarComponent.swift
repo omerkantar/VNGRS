@@ -8,19 +8,29 @@
 
 import UIKit
 
+protocol AvatarComponentDataSource {
+    var title: String { set get }
+    var imageUrl: String? { set get }
+}
 
-
-class UserComponent: UIView {
+class AvatarComponent: UIView {
 
     // Repository ile ortak olan interface builder outlets
     @IBOutlet weak var imageView: ImageView!
     @IBOutlet weak var nameLabel: UILabel!
     
-    //
+    // Initialize
     override func awakeFromNib() {
         super.awakeFromNib()
         
+    }
+    
+    
+    override func configuration(model: Any?) {
+        guard let dataSource = model as? AvatarComponentDataSource else { return }
         
+        nameLabel.text = dataSource.title
+        imageView.loadUrl(dataSource.imageUrl)
     }
     
     

@@ -19,7 +19,7 @@ struct RepositoryModel: Codable {
     var createdAt: String?
     var language: String?
     var description: String?
-    var owner: UserModel?
+    var owner: OwnerModel?
     
     //Custom Keys
     enum CodingKeys: String, CodingKey {

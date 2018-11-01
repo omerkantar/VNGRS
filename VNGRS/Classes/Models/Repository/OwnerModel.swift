@@ -14,7 +14,7 @@ enum OwnerType: String {
     case organization = "Organization"
 }
 
-struct OwnerModel {
+struct OwnerModel: Codable {
 
     var id: Int
     var login: String?
@@ -23,6 +23,17 @@ struct OwnerModel {
     var reposUrl: String?
     var type: String?
     
+    
+    
+    //Custom Keys
+    enum CodingKeys: String, CodingKey {
+        case id
+        case login
+        case nodeId = "node_id"
+        case avatarUrl = "avatar_url"
+        case reposUrl
+        case type
+    }
     
     
     func getType() -> OwnerType {

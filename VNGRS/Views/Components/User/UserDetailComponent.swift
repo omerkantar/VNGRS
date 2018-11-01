@@ -9,9 +9,14 @@
 import UIKit
 import RxGesture
 
+protocol UserDetailComponentDataSource {
+    
+}
+
 class UserDetailComponent: UIView {
 
-    @IBOutlet weak var userComponent: UserComponent!
+    // Avatar
+    @IBOutlet weak var avatar: AvatarComponent!
     
     // number of followings
     @IBOutlet weak var numberOfFollowingStackView: AttributeStackView!
@@ -30,7 +35,10 @@ class UserDetailComponent: UIView {
     }
     
     
-    // MARK: -
+    // MARK: - configuration
+    override func configuration(model: Any?) {
+        
+    }
     
     
     // MARK: - observe

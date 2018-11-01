@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Moya
 
 protocol ViewModelDataSourceInjector {
     associatedtype DataSource

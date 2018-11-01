@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 import Moya
 
 enum Service {
@@ -30,6 +31,7 @@ extension ServiceInjector {
                              completion: ServiceCompletion? = nil) {
         
         let provider = MoyaProvider<Target>()
+
         provider.request(target) { (result) in
             switch result {
             case let .success(response):
@@ -48,15 +50,35 @@ extension ServiceInjector {
             }
         }
     }
+    
+    
+    func cancelRequest() {
+        let sessionManager = Alamofire.SessionManager.default
+        sessionManager
+            .session
+            .getTasksWithCompletionHandler { dataTasks, uploadTasks, downloadTasks in
+                dataTasks.forEach {
+                    $0.cancel()
+                }
+                uploadTasks.forEach {
+                    $0.cancel()
+                }
+                downloadTasks.forEach {
+                    $0.cancel()
+                }
+        }
+    }
 }
 
 
 
-protocol TargetParametersInjector {
+protocol TargetParametersDataSource {
     var parameters: [String: Any]? { get }
 }
 
-extension TargetParametersInjector {
+
+// MARK: - Target typelar target parameters data source olabilir
+extension TargetParametersDataSource {
     func getTask(method: Moya.Method) -> Task {
         if let parameters = parameters {
             if method == .post || method == .put {
@@ -69,6 +91,7 @@ extension TargetParametersInjector {
 }
 
 
+// MARK: - Target ortak olanlar extension ile yazilmistir
 extension TargetType {
     public var sampleData: Data {
         return Data()
@@ -83,6 +106,6 @@ extension TargetType {
     }
     
     public var task: Task {
-        return (self as? TargetParametersInjector)?.getTask(method: method) ?? .requestPlain
+        return (self as? TargetParametersDataSource)?.getTask(method: method) ?? .requestPlain
     }
 }
