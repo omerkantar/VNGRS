@@ -24,7 +24,11 @@ class SearchViewModel: ViewModelServiceInjector {
 
     
     // Keyword
-    var keyword: String?
+    var keyword = Variable<String?>(nil) {
+        didSet {
+            self.search(keyword: keyword.value)
+        }
+    }
     
     // bu table view bind edilecek
     var repositories = Variable<[RepositoryCellModel]>([])
@@ -33,10 +37,14 @@ class SearchViewModel: ViewModelServiceInjector {
     private var isLoading: Bool = false
     
     
-    func search(keyword: String?) {
+    private func search(keyword: String?) {
         
-        guard let keyword = keyword, keyword.count > 3  else {
+        guard let keyword = keyword else {
             repositories.value.removeAll()
+            return
+        }
+        
+        if keyword.count < 3 {
             return
         }
         

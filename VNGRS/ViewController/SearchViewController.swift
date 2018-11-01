@@ -41,8 +41,11 @@ class SearchViewController: BaseViewController {
     func addObservers() {
         
         // TODO: - search component text field dinlenecek
-        viewModel.search(keyword: "vngrs")
+//        viewModel.search(keyword: "vngrs")
         
+        searchComponent.textField.rx.text.bind(to: viewModel.keyword).disposed(by: disposeBag)
+        
+        // table view bind edilmesi
         viewModel.repositories.asObservable().subscribe { [weak self] (list) in
             
             if let count = list.element?.count, count > 0 {
