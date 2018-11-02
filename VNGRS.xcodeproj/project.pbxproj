@@ -47,6 +47,16 @@
 		4E36A9A621899DE100F02A1B /* Repository+Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E36A9A521899DE100F02A1B /* Repository+Language.swift */; };
 		4E36A9AB2189B88F00F02A1B /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E36A9AA2189B88F00F02A1B /* ImageView.swift */; };
 		4E36A9AE2189B9B300F02A1B /* AttributeStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E36A9AD2189B9B300F02A1B /* AttributeStackView.swift */; };
+		4E88FBDB218BAB45001F6CBA /* RepositoryComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88FBDA218BAB45001F6CBA /* RepositoryComponent.swift */; };
+		4E88FBDD218BB728001F6CBA /* AvatarComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88FBDC218BB728001F6CBA /* AvatarComponentViewModel.swift */; };
+		4E88FBDF218BBA76001F6CBA /* UserDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88FBDE218BBA76001F6CBA /* UserDetailViewModel.swift */; };
+		4E88FBE5218BBB59001F6CBA /* RepositoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88FBE3218BBB59001F6CBA /* RepositoryCollectionViewCell.swift */; };
+		4E88FBE6218BBB59001F6CBA /* RepositoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E88FBE4218BBB59001F6CBA /* RepositoryCollectionViewCell.xib */; };
+		4E88FBE8218BBEA9001F6CBA /* UserDetailRouterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88FBE7218BBEA9001F6CBA /* UserDetailRouterData.swift */; };
+		4E88FBEA218BC420001F6CBA /* RepositoryDetailRouterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88FBE9218BC420001F6CBA /* RepositoryDetailRouterData.swift */; };
+		4E88FBEC218BC9BD001F6CBA /* Router+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88FBEB218BC9BD001F6CBA /* Router+Navigation.swift */; };
+		4E88FBEF218BD5C1001F6CBA /* RepositoryDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88FBEE218BD5C1001F6CBA /* RepositoryDetailViewModel.swift */; };
+		4E88FBF1218BD7A6001F6CBA /* LicenseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88FBF0218BD7A6001F6CBA /* LicenseModel.swift */; };
 		4EB222C72189D6820051BE3E /* UserDetailComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB222C62189D6820051BE3E /* UserDetailComponent.swift */; };
 		4EB222C92189D6E00051BE3E /* UIView+Gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB222C82189D6E00051BE3E /* UIView+Gesture.swift */; };
 		4EB222CB2189F21B0051BE3E /* UIColor+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB222CA2189F21B0051BE3E /* UIColor+Theme.swift */; };
@@ -131,6 +141,16 @@
 		4E36A9A521899DE100F02A1B /* Repository+Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Repository+Language.swift"; sourceTree = "<group>"; };
 		4E36A9AA2189B88F00F02A1B /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		4E36A9AD2189B9B300F02A1B /* AttributeStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeStackView.swift; sourceTree = "<group>"; };
+		4E88FBDA218BAB45001F6CBA /* RepositoryComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryComponent.swift; sourceTree = "<group>"; };
+		4E88FBDC218BB728001F6CBA /* AvatarComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarComponentViewModel.swift; sourceTree = "<group>"; };
+		4E88FBDE218BBA76001F6CBA /* UserDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewModel.swift; sourceTree = "<group>"; };
+		4E88FBE3218BBB59001F6CBA /* RepositoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		4E88FBE4218BBB59001F6CBA /* RepositoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryCollectionViewCell.xib; sourceTree = "<group>"; };
+		4E88FBE7218BBEA9001F6CBA /* UserDetailRouterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailRouterData.swift; sourceTree = "<group>"; };
+		4E88FBE9218BC420001F6CBA /* RepositoryDetailRouterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailRouterData.swift; sourceTree = "<group>"; };
+		4E88FBEB218BC9BD001F6CBA /* Router+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Router+Navigation.swift"; sourceTree = "<group>"; };
+		4E88FBEE218BD5C1001F6CBA /* RepositoryDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailViewModel.swift; sourceTree = "<group>"; };
+		4E88FBF0218BD7A6001F6CBA /* LicenseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseModel.swift; sourceTree = "<group>"; };
 		4EB222C62189D6820051BE3E /* UserDetailComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailComponent.swift; sourceTree = "<group>"; };
 		4EB222C82189D6E00051BE3E /* UIView+Gesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Gesture.swift"; sourceTree = "<group>"; };
 		4EB222CA2189F21B0051BE3E /* UIColor+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Theme.swift"; sourceTree = "<group>"; };
@@ -269,6 +289,7 @@
 				4E36A99F2189931D00F02A1B /* RepositoryModel.swift */,
 				4E36A9A321899D0E00F02A1B /* OwnerModel.swift */,
 				4E36A9A521899DE100F02A1B /* Repository+Language.swift */,
+				4E88FBF0218BD7A6001F6CBA /* LicenseModel.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -293,18 +314,11 @@
 		4E36A98F21898E4A00F02A1B /* Table */ = {
 			isa = PBXGroup;
 			children = (
+				4E88FBE2218BBB36001F6CBA /* Collection */,
 				4E36A99A21898F7400F02A1B /* Keyword */,
 				4E36A99121898E5600F02A1B /* Repository */,
 			);
 			path = Table;
-			sourceTree = "<group>";
-		};
-		4E36A99021898E5000F02A1B /* Collection */ = {
-			isa = PBXGroup;
-			children = (
-				4E36A99621898E7500F02A1B /* New Group */,
-			);
-			path = Collection;
 			sourceTree = "<group>";
 		};
 		4E36A99121898E5600F02A1B /* Repository */ = {
@@ -314,13 +328,6 @@
 				4E36A99321898E7000F02A1B /* RepositoryTableViewCell.xib */,
 			);
 			path = Repository;
-			sourceTree = "<group>";
-		};
-		4E36A99621898E7500F02A1B /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 		4E36A99721898F2100F02A1B /* User */ = {
@@ -339,13 +346,6 @@
 				4E36A99C21898FEB00F02A1B /* KeywordTableViewCell.xib */,
 			);
 			path = Keyword;
-			sourceTree = "<group>";
-		};
-		4E36A9A72189B86B00F02A1B /* Repository */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Repository;
 			sourceTree = "<group>";
 		};
 		4E36A9A82189B87400F02A1B /* Custom */ = {
@@ -371,6 +371,47 @@
 				4E36A9AD2189B9B300F02A1B /* AttributeStackView.swift */,
 			);
 			path = AttributeStackView;
+			sourceTree = "<group>";
+		};
+		4E88FBD9218BAB33001F6CBA /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				4E88FBDA218BAB45001F6CBA /* RepositoryComponent.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		4E88FBE0218BBB27001F6CBA /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				4E88FBE1218BBB2E001F6CBA /* Repository */,
+			);
+			path = Collection;
+			sourceTree = "<group>";
+		};
+		4E88FBE1218BBB2E001F6CBA /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				4E88FBE3218BBB59001F6CBA /* RepositoryCollectionViewCell.swift */,
+				4E88FBE4218BBB59001F6CBA /* RepositoryCollectionViewCell.xib */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		4E88FBE2218BBB36001F6CBA /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Collection;
+			sourceTree = "<group>";
+		};
+		4E88FBED218BD5A6001F6CBA /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				4E36A9782189878C00F02A1B /* RepositoryCellModel.swift */,
+				4E88FBEE218BD5C1001F6CBA /* RepositoryDetailViewModel.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 		4EB222D3218A59A90051BE3E /* UIViewController */ = {
@@ -465,9 +506,11 @@
 		4EFB05A82188289A00369E89 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				4E88FBED218BD5A6001F6CBA /* Repository */,
 				4EB222D6218A72120051BE3E /* Protocols */,
-				4E36A9782189878C00F02A1B /* RepositoryCellModel.swift */,
 				4E36A9722189848800F02A1B /* SearchViewModel.swift */,
+				4E88FBDC218BB728001F6CBA /* AvatarComponentViewModel.swift */,
+				4E88FBDE218BBA76001F6CBA /* UserDetailViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -496,7 +539,7 @@
 		4EFB05AB218828AB00369E89 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				4E36A99021898E5000F02A1B /* Collection */,
+				4E88FBE0218BBB27001F6CBA /* Collection */,
 				4E36A98F21898E4A00F02A1B /* Table */,
 			);
 			path = Cells;
@@ -505,7 +548,7 @@
 		4EFB05AC218828BF00369E89 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				4E36A9A72189B86B00F02A1B /* Repository */,
+				4E88FBD9218BAB33001F6CBA /* Repository */,
 				4E36A99721898F2100F02A1B /* User */,
 				4E36A97A2189888F00F02A1B /* Search */,
 			);
@@ -554,6 +597,9 @@
 			isa = PBXGroup;
 			children = (
 				4E36A9512188B67600F02A1B /* Router.swift */,
+				4E88FBEB218BC9BD001F6CBA /* Router+Navigation.swift */,
+				4E88FBE7218BBEA9001F6CBA /* UserDetailRouterData.swift */,
+				4E88FBE9218BC420001F6CBA /* RepositoryDetailRouterData.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -758,6 +804,7 @@
 				4E36A99521898E7000F02A1B /* RepositoryTableViewCell.xib in Resources */,
 				4E36A95A2188CA2600F02A1B /* Repository.storyboard in Resources */,
 				4EFB05C72188432300369E89 /* users.json in Resources */,
+				4E88FBE6218BBB59001F6CBA /* RepositoryCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -871,7 +918,10 @@
 			files = (
 				4E36A98821898E1A00F02A1B /* UICollectionView+QueerViewBuilder.swift in Sources */,
 				4E36A9A02189931D00F02A1B /* RepositoryModel.swift in Sources */,
+				4E88FBEA218BC420001F6CBA /* RepositoryDetailRouterData.swift in Sources */,
+				4E88FBDF218BBA76001F6CBA /* UserDetailViewModel.swift in Sources */,
 				4EFB05C6218841AD00369E89 /* UserManager.swift in Sources */,
+				4E88FBE8218BBEA9001F6CBA /* UserDetailRouterData.swift in Sources */,
 				4E36A99921898F4300F02A1B /* AvatarComponent.swift in Sources */,
 				4EFB05B62188293C00369E89 /* UserClass.swift in Sources */,
 				4E36A9472188B60100F02A1B /* SearchViewController.swift in Sources */,
@@ -885,13 +935,16 @@
 				4E36A98E21898E1A00F02A1B /* UICollectionView+CellType.swift in Sources */,
 				4E36A9492188B62400F02A1B /* RepositoryDetailViewController.swift in Sources */,
 				4E36A97E21898D1900F02A1B /* SearchManager.swift in Sources */,
+				4E88FBEF218BD5C1001F6CBA /* RepositoryDetailViewModel.swift in Sources */,
 				4EB222C72189D6820051BE3E /* UserDetailComponent.swift in Sources */,
 				4E36A9792189878C00F02A1B /* RepositoryCellModel.swift in Sources */,
 				4EB222CF2189F7780051BE3E /* UIFont+Style.swift in Sources */,
 				4E36A99421898E7000F02A1B /* RepositoryTableViewCell.swift in Sources */,
 				4E36A9652188D68800F02A1B /* SearchProvider.swift in Sources */,
+				4E88FBF1218BD7A6001F6CBA /* LicenseModel.swift in Sources */,
 				4EFB057A2188288700369E89 /* AppDelegate.swift in Sources */,
 				4E36A98C21898E1A00F02A1B /* UIView+Queer.swift in Sources */,
+				4E88FBEC218BC9BD001F6CBA /* Router+Navigation.swift in Sources */,
 				4E36A9712188F93300F02A1B /* SearchComponent.swift in Sources */,
 				4E36A9752189849D00F02A1B /* ViewModel+DataSource.swift in Sources */,
 				4EB222D8218A72270051BE3E /* ViewModel+Service.swift in Sources */,
@@ -904,6 +957,9 @@
 				4EFB05BD21882AB300369E89 /* UserStruct.swift in Sources */,
 				4E36A9AE2189B9B300F02A1B /* AttributeStackView.swift in Sources */,
 				4E36A98721898E1A00F02A1B /* UITableView+QueerViewBuilder.swift in Sources */,
+				4E88FBDD218BB728001F6CBA /* AvatarComponentViewModel.swift in Sources */,
+				4E88FBE5218BBB59001F6CBA /* RepositoryCollectionViewCell.swift in Sources */,
+				4E88FBDB218BAB45001F6CBA /* RepositoryComponent.swift in Sources */,
 				4E36A99D21898FEB00F02A1B /* KeywordTableViewCell.swift in Sources */,
 				4E36A98921898E1A00F02A1B /* UITableView+CellType.swift in Sources */,
 				4E36A9672188D6B000F02A1B /* ServiceInjector.swift in Sources */,

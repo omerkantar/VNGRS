@@ -18,6 +18,7 @@ class RepositoryTableViewCell: UITableViewCell {
     @IBOutlet weak var updatedDateLabel: UILabel!
     @IBOutlet weak var owner: AvatarComponent!
     
+    var viewModel: RepositoryCellModel?
     
     // Initialization code
     override func awakeFromNib() {
@@ -30,8 +31,9 @@ class RepositoryTableViewCell: UITableViewCell {
     // MARK: - Design
     func design() {
         languageStackView.imageView?.circle()
-        owner.imageView.circle()
-
+        owner.imageView.cornerRadius(12.0)
+        owner.addUserDetailInteraction()
+        languageStackView.isHidden = true
     }
     
     
@@ -41,12 +43,17 @@ class RepositoryTableViewCell: UITableViewCell {
         let model = repository.model
         titleLabel.text = model.name
         descriptionLabel.text = model.description
-        languageStackView.label?.text = model.language
-        languageStackView.build(text: model.language ?? "", imageColor: .yellow, icon: nil)
 
         owner.imageView.loadUrl(model.owner?.avatarUrl)
         owner.nameLabel.text = model.owner?.login
-        updatedDateLabel.text = nil
+        updatedDateLabel.text = repository.model.createdAt
+        languageStackView.isHidden = true
+
+        if let lang = repository.language {
+            languageStackView.isHidden = false
+            languageStackView.label?.text = lang.rawValue
+            languageStackView.build(text: lang.rawValue, imageColor: lang.color, icon: nil)
+        }
     }
     
 }

@@ -25,9 +25,9 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ytD-JM-hwO">
-                        <rect key="frame" x="20" y="36" width="38.5" height="18"/>
+                        <rect key="frame" x="20" y="39" width="38.5" height="18"/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="textColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ckd-h7-tMR">
@@ -37,7 +37,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="oNw-kd-SvA" customClass="AttributeStackView" customModule="VNGRS" customModuleProvider="target">
-                        <rect key="frame" x="20" y="101.5" width="48.5" height="14.5"/>
+                        <rect key="frame" x="20" y="100.5" width="48.5" height="14.5"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VuQ-S3-5BV" customClass="ImageView" customModule="VNGRS" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="1" width="12" height="12"/>
@@ -60,19 +60,19 @@
                         </connections>
                     </stackView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lAD-Nk-QDb" customClass="AvatarComponent" customModule="VNGRS" customModuleProvider="target">
-                        <rect key="frame" x="221" y="90.5" width="81" height="36"/>
+                        <rect key="frame" x="219" y="88.5" width="83" height="38"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dYy-yf-D72">
-                                <rect key="frame" x="0.0" y="9.5" width="37" height="17"/>
+                                <rect key="frame" x="0.0" y="10.5" width="37" height="17"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                 <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="du5-bb-C9A" customClass="ImageView" customModule="VNGRS" customModuleProvider="target">
-                                <rect key="frame" x="45" y="0.0" width="36" height="36"/>
+                                <rect key="frame" x="45" y="0.0" width="38" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="du5-bb-C9A" secondAttribute="height" id="Das-XU-ZY6"/>
-                                    <constraint firstAttribute="width" constant="36" id="lPV-dq-NrY"/>
+                                    <constraint firstAttribute="width" constant="38" id="lPV-dq-NrY"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -96,7 +96,7 @@
                     <constraint firstItem="lAD-Nk-QDb" firstAttribute="centerY" secondItem="3V1-2u-Njl" secondAttribute="centerY" id="7Fi-rm-9rS"/>
                     <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="ytD-JM-hwO" secondAttribute="trailing" constant="12" id="JfG-sy-LbP"/>
                     <constraint firstItem="oNw-kd-SvA" firstAttribute="leading" secondItem="ytD-JM-hwO" secondAttribute="leading" id="KC3-LG-Ngv"/>
-                    <constraint firstItem="ytD-JM-hwO" firstAttribute="top" secondItem="fsI-0p-lUf" secondAttribute="bottom" id="NOE-Rn-QPZ"/>
+                    <constraint firstItem="ytD-JM-hwO" firstAttribute="top" secondItem="fsI-0p-lUf" secondAttribute="bottom" constant="3" id="NOE-Rn-QPZ"/>
                     <constraint firstItem="fsI-0p-lUf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="RPy-YI-pdQ"/>
                     <constraint firstItem="fsI-0p-lUf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="S1P-uU-y3W"/>
                     <constraint firstAttribute="trailing" secondItem="ckd-h7-tMR" secondAttribute="trailing" constant="18" id="hcF-Su-KJM"/>
@@ -109,6 +109,7 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <inset key="separatorInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
             <connections>
                 <outlet property="descriptionLabel" destination="ytD-JM-hwO" id="nkf-gT-2Ih"/>
                 <outlet property="languageStackView" destination="oNw-kd-SvA" id="32O-Ej-k8E"/>
