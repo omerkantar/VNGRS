@@ -60,6 +60,8 @@ class SearchViewModel: ViewModelServiceInjector {
         let target = Service.Target.keyword(query: keyword, page: 1, perPage: 20)
         
         request(target: target, type: SearchModel.self) { [weak self] (model) in
+            // Note -> eski data silinecek
+            self?.repositories.value.removeAll()
             self?.repositories.value = model.items?.compactMap { RepositoryCellModel(model: $0) } ?? []
         }
         
