@@ -12,7 +12,6 @@ import Kingfisher
 class ImageView: UIImageView {
 
     
-    
     // MARK: - circle
     func circle() {
         self.layer.cornerRadius = self.bounds.width / 2.0
@@ -25,6 +24,11 @@ class ImageView: UIImageView {
         let mask = CAShapeLayer()
         mask.path = path.cgPath
         layer.mask = mask
+    }
+    
+    func cornerRadius(_ radius: CGFloat) {
+        self.layer.cornerRadius = radius
+        self.layer.masksToBounds = true
     }
 }
 
