@@ -25,6 +25,10 @@ class SearchViewController: BaseViewController {
         super.viewDidLoad()
         buildTableView()
         addObservers()
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.5) {
+            self.searchComponent.textField.becomeFirstResponder()
+        }
     }
     
     // MARK: - Navigation bar
@@ -40,11 +44,10 @@ class SearchViewController: BaseViewController {
     
     func addObservers() {
         
-        // TODO: - search component text field dinlenecek
-//        viewModel.search(keyword: "vngrs")
-        
-        searchComponent.textField.rx.text.bind(to: viewModel.keyword).disposed(by: disposeBag)
-        
+        searchComponent.textField.rx.controlEvent([.editingDidEndOnExit]).subscribe { [weak self] text in
+            self?.viewModel.search(keyword: self?.searchComponent.textField.text)
+            
+        }.disposed(by: disposeBag)
         // table view bind edilmesi
         viewModel.repositories.asObservable().subscribe { [weak self] (list) in
             
@@ -61,10 +64,6 @@ class SearchViewController: BaseViewController {
     }
 
     
-    // MARK: - Load data
-    func loadData() {
-        
-    }
     
     
 

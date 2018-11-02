@@ -30,7 +30,7 @@ class WindowManager: NSObject {
     }
     
     // root view controller olusturulacak
-    static func rootViewController() -> SearchViewController? {
+    static func searchViewController() -> SearchViewController? {
         //
         let nc = appDelegate().window?.rootViewController as? UINavigationController
         // search ilk eleman olacak
@@ -42,5 +42,9 @@ class WindowManager: NSObject {
             return nil
         }
         return vc as? SearchViewController
+    }
+    
+    static func rootViewController() -> UINavigationController? {
+        return appDelegate().window?.rootViewController as? UINavigationController
     }
 }

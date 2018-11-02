@@ -38,19 +38,19 @@ extension UIViewController {
                 return .user
             }
         }
+        
+        func instance<T: UIViewController>(type: T.Type) -> T {
+            return storyboard.instance.instantiateViewController(withIdentifier: rawValue) as! T
+        }
+        
     }
     
-    
-    static func initialize(from identifier: Identifier) -> UIViewController {
-        return identifier.storyboard.instance.instantiateViewController(withIdentifier: identifier.rawValue)
-    }
-
     
     static func fromNavigationController(identifier: Identifier) -> UINavigationController {
-        return UINavigationController(rootViewController: initialize(from: identifier))
+        
+        return UINavigationController(rootViewController: identifier.instance(type: UIViewController.self))
     }
    
-    
     func push(viewController: UIViewController) {
         self.navigationController?.pushViewController(viewController, animated: true)
     }

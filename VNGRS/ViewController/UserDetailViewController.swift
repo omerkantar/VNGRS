@@ -8,13 +8,25 @@
 
 import UIKit
 
-class UserDetailViewController: BaseViewController {
 
+
+class UserDetailViewController: BaseViewController, RouterDataSourceInjector {
     
+    
+    @IBOutlet weak var tableView: QueerTableView!
+    
+    // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
     
+    // MARK: - RouterDataSourceInjector
+    typealias DataSource = UserDetailDataSource
+    func configuration(dataSource: UserDetailDataSource) {
+        
+    }
+    
+
 
 }

@@ -9,18 +9,48 @@
 import UIKit
 
 // MARK: - Router data
-extension Router {
-    public enum Navigation {
-        case userDetail(id: Int)
-        case repositoryDetail(id: String)
-    }
+protocol RouterDataSource {
+
 }
 
-protocol RouterDataSource { }
 
+fileprivate typealias VCIdentifier = UIViewController.Identifier
+
+// MARK: - Class
 class Router {
 
+    
     static func navigate(_ navigation: Navigation) -> Void {
+        
+        guard let nc = WindowManager.rootViewController() else { return }
+        
+        
+        switch navigation {
+        case .userDetail(let name):
+            
+            let router = UserDetailRouterData(title: name)
+            
+            let vc = VCIdentifier.userDetail.instance(type: UserDetailViewController.self)
+            
+            vc.configuration(dataSource: router)
+            
+            nc.pushViewController(vc, animated: true)
+
+        case .repositoryDetail(let model):
+            
+            let router = RepositoryDetailRouterData(model: model)
+            
+            let vc = VCIdentifier.repositoryDetail.instance(type: RepositoryDetailViewController.self)
+            vc.configuration(dataSource: router)
+            nc.pushViewController(vc, animated: true)
+
+        }
         
     }
 }
+
+
+
+
+
+

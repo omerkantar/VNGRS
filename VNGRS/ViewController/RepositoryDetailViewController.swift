@@ -9,14 +9,33 @@
 import UIKit
 
 
-class RepositoryDetailViewController: BaseViewController {
+class RepositoryDetailViewController: BaseViewController, RouterDataSourceInjector, ViewModelInjector {
+    
+    
+    
 
+    @IBOutlet weak var component: RepositoryComponent!
+
+    // MARK: - ViewModelInjector
+    typealias ViewModel = RepositoryDetailViewModel
+    var viewModel: RepositoryDetailViewModel?
+
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        DispatchQueue.main.async {
+            if let vm = self.viewModel {
+                self.component.configuration(model: vm)
+            }
+        }
     }
     
+    // MARK: - RouterDataSourceInjector
+    typealias DataSource = RepositoryDetailRouterData
+    func configuration(dataSource: RepositoryDetailRouterData) {
+        viewModel = RepositoryDetailViewModel(model: dataSource.model)
+    }
 
 
 }
