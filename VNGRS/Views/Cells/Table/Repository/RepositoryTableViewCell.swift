@@ -45,6 +45,8 @@ class RepositoryTableViewCell: UITableViewCell {
     // MARK: - Configuration
     override func configuration(model: Any?) {
         guard let repository = model as? RepositoryCellModel else { return }
+        
+        self.viewModel = repository
         let model = repository.model
         titleLabel.text = model.name
         descriptionLabel.text = model.description
