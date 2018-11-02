@@ -26,7 +26,7 @@ class RepositoryDetailViewController: BaseViewController, RouterDataSourceInject
 
         DispatchQueue.main.async {
             if let vm = self.viewModel {
-                self.component.configuration(model: vm)
+//                self.component.configuration(model: vm)
             }
         }
     }
@@ -37,5 +37,9 @@ class RepositoryDetailViewController: BaseViewController, RouterDataSourceInject
         viewModel = RepositoryDetailViewModel(model: dataSource.model)
     }
 
+    // MARK: - Navigation bar
+    override func isShowingNavigationBar() -> Bool {
+        return true
+    }
 
 }
