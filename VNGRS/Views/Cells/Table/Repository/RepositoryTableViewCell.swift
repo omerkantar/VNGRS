@@ -15,8 +15,13 @@ class RepositoryTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var languageStackView: AttributeStackView!
-    @IBOutlet weak var updatedDateLabel: UILabel!
+    @IBOutlet weak var createdDateLabel: UILabel!
     @IBOutlet weak var ownerComponent: AvatarComponent!
+    @IBOutlet weak var licenseLabel: UILabel!
+    @IBOutlet weak var forkStackView: AttributeStackView!
+    @IBOutlet weak var starStackView: AttributeStackView!
+
+    
     
     var viewModel: RepositoryCellModel?
     
@@ -33,8 +38,10 @@ class RepositoryTableViewCell: UITableViewCell {
         languageStackView.imageView?.circle()
         ownerComponent.imageView.cornerRadius(12.0)
         ownerComponent.addUserDetailInteraction()
-        
         languageStackView.isHidden = true
+        forkStackView.isHidden = true
+        starStackView.isHidden = true
+        licenseLabel.isHidden = true
         
         let view = UIView(frame: .zero)
         view.backgroundColor = UIColor.groupTableViewBackground
@@ -52,13 +59,18 @@ class RepositoryTableViewCell: UITableViewCell {
         descriptionLabel.text = model.description
 
         ownerComponent.configuration(model: repository.avatarViewModel)
-        updatedDateLabel.text = repository.model.createdAt
+        createdDateLabel.text = repository.createdDate
         languageStackView.isHidden = true
-
-        if let lang = repository.language {
+        if let language = repository.language {
             languageStackView.isHidden = false
-            languageStackView.label?.text = lang.rawValue
-            languageStackView.build(text: lang.rawValue, imageColor: lang.color, icon: nil)
+            languageStackView.build(text: language.title, imageColor: language.color)
+        }
+        
+        if let license = repository.model.license?.name {
+            self.licenseLabel.isHidden = false
+            self.licenseLabel.text = license
+        } else {
+            self.licenseLabel.isHidden = true
         }
     }
     

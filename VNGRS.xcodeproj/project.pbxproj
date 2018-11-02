@@ -63,6 +63,8 @@
 		4EB222CD2189F23E0051BE3E /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB222CC2189F23E0051BE3E /* Theme.swift */; };
 		4EB222CF2189F7780051BE3E /* UIFont+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB222CE2189F7780051BE3E /* UIFont+Style.swift */; };
 		4EB222D8218A72270051BE3E /* ViewModel+Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB222D7218A72270051BE3E /* ViewModel+Service.swift */; };
+		4ECA4CF7218CAC6D0045B8F0 /* StatusBarProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECA4CF6218CAC6D0045B8F0 /* StatusBarProgress.swift */; };
+		4ECA4CFA218CACEE0045B8F0 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECA4CF9218CACEE0045B8F0 /* String+Extensions.swift */; };
 		4EFA920B218B92B0009ADFB5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4EFA920D218B92B0009ADFB5 /* Localizable.strings */; };
 		4EFB057A2188288700369E89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFB05792188288700369E89 /* AppDelegate.swift */; };
 		4EFB057F2188288700369E89 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EFB057D2188288700369E89 /* Search.storyboard */; };
@@ -157,6 +159,8 @@
 		4EB222CC2189F23E0051BE3E /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		4EB222CE2189F7780051BE3E /* UIFont+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Style.swift"; sourceTree = "<group>"; };
 		4EB222D7218A72270051BE3E /* ViewModel+Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewModel+Service.swift"; sourceTree = "<group>"; };
+		4ECA4CF6218CAC6D0045B8F0 /* StatusBarProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarProgress.swift; sourceTree = "<group>"; };
+		4ECA4CF9218CACEE0045B8F0 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		4EFA9209218B92A3009ADFB5 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Search.strings; sourceTree = "<group>"; };
 		4EFA920A218B92A3009ADFB5 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		4EFA920E218B92B7009ADFB5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -227,6 +231,7 @@
 		4E36A9532188B85100F02A1B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				4ECA4CF8218CACDD0045B8F0 /* Foundation */,
 				4E36A9542188B85F00F02A1B /* UIKit */,
 			);
 			path = Extensions;
@@ -351,6 +356,7 @@
 		4E36A9A82189B87400F02A1B /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				4ECA4CF5218CAC590045B8F0 /* Progress */,
 				4E36A9AC2189B98500F02A1B /* AttributeStackView */,
 				4E36A9A92189B87900F02A1B /* Image */,
 			);
@@ -429,6 +435,22 @@
 				4EB222D7218A72270051BE3E /* ViewModel+Service.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		4ECA4CF5218CAC590045B8F0 /* Progress */ = {
+			isa = PBXGroup;
+			children = (
+				4ECA4CF6218CAC6D0045B8F0 /* StatusBarProgress.swift */,
+			);
+			path = Progress;
+			sourceTree = "<group>";
+		};
+		4ECA4CF8218CACDD0045B8F0 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				4ECA4CF9218CACEE0045B8F0 /* String+Extensions.swift */,
+			);
+			path = Foundation;
 			sourceTree = "<group>";
 		};
 		4EFB056D2188288700369E89 = {
@@ -956,6 +978,7 @@
 				4E36A94B2188B63000F02A1B /* UserDetailViewController.swift in Sources */,
 				4EFB05BD21882AB300369E89 /* UserStruct.swift in Sources */,
 				4E36A9AE2189B9B300F02A1B /* AttributeStackView.swift in Sources */,
+				4ECA4CFA218CACEE0045B8F0 /* String+Extensions.swift in Sources */,
 				4E36A98721898E1A00F02A1B /* UITableView+QueerViewBuilder.swift in Sources */,
 				4E88FBDD218BB728001F6CBA /* AvatarComponentViewModel.swift in Sources */,
 				4E88FBE5218BBB59001F6CBA /* RepositoryCollectionViewCell.swift in Sources */,
@@ -967,6 +990,7 @@
 				4E36A9732189848800F02A1B /* SearchViewModel.swift in Sources */,
 				4E36A98D21898E1A00F02A1B /* QueerTableView.swift in Sources */,
 				4E36A9452188B5F200F02A1B /* BaseViewController.swift in Sources */,
+				4ECA4CF7218CAC6D0045B8F0 /* StatusBarProgress.swift in Sources */,
 				4E36A95C2188CA8E00F02A1B /* UIViewController+Storyboard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

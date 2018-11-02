@@ -8,21 +8,39 @@
 
 import UIKit
 
+// Builder Stucture
+struct AttributeStackViewBuilder {
+    var title: String
+    var color: UIColor? = nil
+}
+
 class RepositoryCellModel {
 
     let model: RepositoryModel
-    
-    var language: RepositoryModel.Language?
-    
+    var language: AttributeStackViewBuilder?
     var avatarViewModel: AvatarComponentViewModel?
+    var createdDate: String?
+    var fork: AttributeStackViewBuilder?
+    var star: AttributeStackViewBuilder?
     
     init(model: RepositoryModel) {
         self.model = model
+        self.createdDate = model.createdAt?.dateString
+        
         if let lang = model.language {
-            self.language = RepositoryModel.language(lang)
+            let localLanguage = RepositoryModel.language(lang)
+            self.language = AttributeStackViewBuilder(title: lang, color: localLanguage?.color ?? .red)
         }
         if let owner = model.owner {
             self.avatarViewModel = AvatarComponentViewModel(owner: owner)
+        }
+        
+        if model.numberOfForks > 0 {
+            numberOfForks = AttributeStackViewBuilder(title: "🍴 Forks:\(model.numberOfForks)")
+        }
+        
+        if model.numberOfStars > 0 {
+            star = AttributeStackViewBuilder(title: "⭐️ Stars:\(model.numberOfStars)")
         }
     }
     
