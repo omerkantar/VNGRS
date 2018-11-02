@@ -30,9 +30,19 @@ extension ServiceInjector {
                              type: T.Type,
                              completion: ServiceCompletion? = nil) {
         
+        let statusBarProgress = StatusBarProgress()
+        
         let provider = MoyaProvider<Target>()
-
-        provider.request(target) { (result) in
+        
+        statusBarProgress.show()
+        
+        provider.request(target, progress: { (progress) in
+            
+            debugPrint("progress: \(progress.progress) ")
+            statusBarProgress.animated(progress: progress.progress)
+            
+        }) { (result) in
+            
             switch result {
             case let .success(response):
                 
@@ -48,6 +58,7 @@ extension ServiceInjector {
                 debugPrint("Error...\(error)")
                 completion?(.failure(error: error, isMappingError: false))
             }
+            statusBarProgress.hide()
         }
     }
     
@@ -100,7 +111,7 @@ extension TargetType {
     public var baseURL: URL {
         return Service.baseURL
     }
-
+    
     public var headers: [String : String]? {
         return nil
     }
