@@ -41,11 +41,20 @@ class AvatarComponent: UIView {
     
     
     func addUserDetailInteraction() {
+        self.isUserInteractionEnabled = true
+        self.imageView.isUserInteractionEnabled = true
         
-        guard let title = dataSource?.title else { return }
-        imageView.rx.tapGesture().when(.recognized).subscribe(onNext: { _ in
-                Router.navigate(.userDetail(name: title))
+        imageView.rx
+            .anyGesture(.tap())
+            .when(.began)
+            .subscribe(onNext: { [weak self] _ in
+                
+                if let title = self?.dataSource?.title {
+                    Router.navigate(.userDetail(name: title))
+                }
+                
             }).dispose()
+        
     }
     
     
