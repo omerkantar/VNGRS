@@ -19,11 +19,14 @@ class RepositoryCellModel {
     init(model: RepositoryModel) {
         self.model = model
         if let lang = model.language {
-            self.language = RepositoryModel.Language(rawValue: lang)
+            self.language = RepositoryModel.language(lang)
         }
         if let owner = model.owner {
             self.avatarViewModel = AvatarComponentViewModel(owner: owner)
         }
     }
     
+    func navigateRepositoryDetail() {
+        Router.navigate(.repositoryDetail(model: model))
+    }
 }
