@@ -16,7 +16,6 @@ extension RepositoryModel {
     public enum Language: String {
         case swift = "swift" // 🚀
         case objC = "objective-c"// 🧟‍♂️
-        case c = "c"
         case cPlusPlus = "c++"
         case python = "python"
         case dotNet = ".net"
@@ -24,6 +23,28 @@ extension RepositoryModel {
         case kotlin = "kotlin"
         case java = "java"
         case javascript = "javascript"
+        case scala = "scala"
+        case go = "go"
+        case typescript = "typescript"
+        case actionscript = "actionscript"
+        case erlang = "erlang"
+        case elixr = "elixr"
+        case lua = "lua"
+        case lisp = "lisp"
+        case clojure = "clojure"
+        case crystal = "crystal"
+        case php = "php"
+        case sql = "sql"
+    }
+    
+    
+    static var all: [Language] {
+        return [.swift, .objC, .actionscript, .clojure, .cPlusPlus, .crystal, .dotNet, .elixr, .erlang, .lua, .scala, .lisp, .php, .sql, .python, .ruby, .kotlin, .java,.go]
+    }
+    
+    static func contain(text: String?) -> Language? {
+        guard let text = text else { return nil }
+        return all.lazy.filter { text.lowercased().contains($0.rawValue.lowercased()) }.first
     }
 }
 
@@ -35,20 +56,24 @@ extension RepositoryModel.Language: ProgramLanguageDataSource {
             return .orange
         case .objC:
             return .blue
-        case .c:
+        case .sql:
             return .gray
         case .cPlusPlus:
             return .darkGray
-        case .python:
+        case .python, .actionscript:
             return .green
-        case .dotNet:
+        case .dotNet, .crystal, .erlang, .elixr:
             return .purple
-        case .ruby:
+        case .ruby, .clojure, .lua, .scala, .php:
             return .red
         case .javascript:
-            return .yellow
+            return UIColor(red:255/255.0, green:255/255.0, blue:0/255.0, alpha: 1)
         case .java:
-            return .groupTableViewBackground
+            return UIColor(red:255/255.0, green:0/255.0, blue:255/255.0, alpha: 1)
+        case .go:
+            return UIColor(red:243/255.0, green:151/255.0, blue:54/255.0, alpha: 1)
+        case .typescript, .lisp:
+            return UIColor(red:155/255.0, green:255/255.0, blue:98/255.0, alpha: 1)
         }
     }
 }
