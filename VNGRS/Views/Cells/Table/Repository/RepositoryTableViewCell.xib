@@ -39,9 +39,10 @@
                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="oNw-kd-SvA" customClass="AttributeStackView" customModule="VNGRS" customModuleProvider="target">
                         <rect key="frame" x="20" y="100.5" width="48.5" height="14.5"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VuQ-S3-5BV" customClass="ImageView" customModule="VNGRS" customModuleProvider="target">
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VuQ-S3-5BV" customClass="ImageView" customModule="VNGRS" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="1" width="12" height="12"/>
                                 <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="VuQ-S3-5BV" secondAttribute="height" id="7hM-qS-JNF"/>
                                     <constraint firstAttribute="height" constant="12" id="rfS-gw-nuP"/>
@@ -68,7 +69,7 @@
                                 <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="du5-bb-C9A" customClass="ImageView" customModule="VNGRS" customModuleProvider="target">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="du5-bb-C9A" customClass="ImageView" customModule="VNGRS" customModuleProvider="target">
                                 <rect key="frame" x="45" y="0.0" width="38" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="du5-bb-C9A" secondAttribute="height" id="Das-XU-ZY6"/>
@@ -113,7 +114,7 @@
             <connections>
                 <outlet property="descriptionLabel" destination="ytD-JM-hwO" id="nkf-gT-2Ih"/>
                 <outlet property="languageStackView" destination="oNw-kd-SvA" id="32O-Ej-k8E"/>
-                <outlet property="owner" destination="lAD-Nk-QDb" id="BZz-5a-xAX"/>
+                <outlet property="ownerComponent" destination="lAD-Nk-QDb" id="BZz-5a-xAX"/>
                 <outlet property="titleLabel" destination="fsI-0p-lUf" id="VAE-9B-CC1"/>
                 <outlet property="updatedDateLabel" destination="ckd-h7-tMR" id="3qp-Eg-BXM"/>
             </connections>

@@ -16,7 +16,7 @@ class RepositoryTableViewCell: UITableViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var languageStackView: AttributeStackView!
     @IBOutlet weak var updatedDateLabel: UILabel!
-    @IBOutlet weak var owner: AvatarComponent!
+    @IBOutlet weak var ownerComponent: AvatarComponent!
     
     var viewModel: RepositoryCellModel?
     
@@ -31,9 +31,14 @@ class RepositoryTableViewCell: UITableViewCell {
     // MARK: - Design
     func design() {
         languageStackView.imageView?.circle()
-        owner.imageView.cornerRadius(12.0)
-        owner.addUserDetailInteraction()
+        ownerComponent.imageView.cornerRadius(12.0)
+        ownerComponent.addUserDetailInteraction()
+        
         languageStackView.isHidden = true
+        
+        let view = UIView(frame: .zero)
+        view.backgroundColor = UIColor.groupTableViewBackground
+        selectedBackgroundView = view
     }
     
     
@@ -44,8 +49,7 @@ class RepositoryTableViewCell: UITableViewCell {
         titleLabel.text = model.name
         descriptionLabel.text = model.description
 
-        owner.imageView.loadUrl(model.owner?.avatarUrl)
-        owner.nameLabel.text = model.owner?.login
+        ownerComponent.configuration(model: repository.avatarViewModel)
         updatedDateLabel.text = repository.model.createdAt
         languageStackView.isHidden = true
 
@@ -54,6 +58,11 @@ class RepositoryTableViewCell: UITableViewCell {
             languageStackView.label?.text = lang.rawValue
             languageStackView.build(text: lang.rawValue, imageColor: lang.color, icon: nil)
         }
+    }
+    
+    
+    override func didSelect(model: Any?) {
+        viewModel?.navigateRepositoryDetail()
     }
     
 }
