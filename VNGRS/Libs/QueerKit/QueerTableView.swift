@@ -18,7 +18,7 @@ protocol QueerScrollViewDelegate: NSObjectProtocol {
 
 class QueerTableView: UITableView, UITableViewDataSource, UITableViewDelegate {
 
-    private var rowModelOfCellType = [[CellType: [Any]?]]()
+    var rowModelOfCellType = [[CellType: [Any]?]]()
     
     weak var configure: QueerTableViewConfigure?
     
@@ -35,7 +35,6 @@ class QueerTableView: UITableView, UITableViewDataSource, UITableViewDelegate {
     
     // MARK: - models
     func add(models: [Any]?, cellType: CellType) {
-        register(type: cellType)
         rowModelOfCellType.append([cellType: models])
     }
     
