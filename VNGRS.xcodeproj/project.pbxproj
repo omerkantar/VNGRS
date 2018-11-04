@@ -10,6 +10,8 @@
 		4E140682218F5833002478A8 /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFB05C221883E4900369E89 /* Mock.swift */; };
 		4E140683218F583A002478A8 /* jakeWhartonRepos.json in Resources */ = {isa = PBXBuildFile; fileRef = 4E36A95E2188D4EF00F02A1B /* jakeWhartonRepos.json */; };
 		4E140684218F583D002478A8 /* jakeWharton.json in Resources */ = {isa = PBXBuildFile; fileRef = 4E36A95D2188D4EF00F02A1B /* jakeWharton.json */; };
+		4E140685218F5BD7002478A8 /* ParseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFB05C5218841AD00369E89 /* ParseManager.swift */; };
+		4E140688218F5E08002478A8 /* search.json in Resources */ = {isa = PBXBuildFile; fileRef = 4E36A95F2188D4EF00F02A1B /* search.json */; };
 		4E36A9452188B5F200F02A1B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E36A9442188B5F200F02A1B /* BaseViewController.swift */; };
 		4E36A9472188B60100F02A1B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E36A9462188B60100F02A1B /* SearchViewController.swift */; };
 		4E36A9492188B62400F02A1B /* RepositoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E36A9482188B62400F02A1B /* RepositoryDetailViewController.swift */; };
@@ -83,9 +85,6 @@
 		4EFB05842188288800369E89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EFB05822188288800369E89 /* LaunchScreen.storyboard */; };
 		4EFB058F2188288900369E89 /* VNGRSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFB058E2188288900369E89 /* VNGRSTests.swift */; };
 		4EFB059A2188288900369E89 /* VNGRSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFB05992188288900369E89 /* VNGRSUITests.swift */; };
-		4EFB05B62188293C00369E89 /* UserClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFB05B52188293C00369E89 /* UserClass.swift */; };
-		4EFB05BD21882AB300369E89 /* UserStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFB05BC21882AB300369E89 /* UserStruct.swift */; };
-		4EFB05C121883D1000369E89 /* JSONParseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFB05C021883D1000369E89 /* JSONParseTest.swift */; };
 		4EFB05C321883E4900369E89 /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFB05C221883E4900369E89 /* Mock.swift */; };
 		4EFB05C6218841AD00369E89 /* ParseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFB05C5218841AD00369E89 /* ParseManager.swift */; };
 		6FF296C6FDA4739A7C6A4E20 /* Pods_VNGRSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74167CABBA46265B8169AF4A /* Pods_VNGRSTests.framework */; };
@@ -195,9 +194,6 @@
 		4EFB05952188288900369E89 /* VNGRSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VNGRSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EFB05992188288900369E89 /* VNGRSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VNGRSUITests.swift; sourceTree = "<group>"; };
 		4EFB059B2188288900369E89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4EFB05B52188293C00369E89 /* UserClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserClass.swift; sourceTree = "<group>"; };
-		4EFB05BC21882AB300369E89 /* UserStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStruct.swift; sourceTree = "<group>"; };
-		4EFB05C021883D1000369E89 /* JSONParseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParseTest.swift; sourceTree = "<group>"; };
 		4EFB05C221883E4900369E89 /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
 		4EFB05C5218841AD00369E89 /* ParseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseManager.swift; sourceTree = "<group>"; };
 		58654CBC175D68A26315C008 /* Pods-VNGRS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VNGRS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VNGRS/Pods-VNGRS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -286,15 +282,6 @@
 				4E36A94F2188B66D00F02A1B /* WindowManager.swift */,
 			);
 			path = Window;
-			sourceTree = "<group>";
-		};
-		4E36A96A2188DECF00F02A1B /* For Test */ = {
-			isa = PBXGroup;
-			children = (
-				4EFB05B42188291400369E89 /* Struct */,
-				4EFB05B32188290F00369E89 /* Class */,
-			);
-			path = "For Test";
 			sourceTree = "<group>";
 		};
 		4E36A96B2188DEDB00F02A1B /* User */ = {
@@ -532,7 +519,6 @@
 			isa = PBXGroup;
 			children = (
 				4EFB058E2188288900369E89 /* VNGRSTests.swift */,
-				4EFB05C021883D1000369E89 /* JSONParseTest.swift */,
 				4EFB05902188288900369E89 /* Info.plist */,
 			);
 			path = VNGRSTests;
@@ -665,25 +651,8 @@
 				4E36A96D2188EDF800F02A1B /* Search */,
 				4E36A96C2188EDED00F02A1B /* Repository */,
 				4E36A96B2188DEDB00F02A1B /* User */,
-				4E36A96A2188DECF00F02A1B /* For Test */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		4EFB05B32188290F00369E89 /* Class */ = {
-			isa = PBXGroup;
-			children = (
-				4EFB05B52188293C00369E89 /* UserClass.swift */,
-			);
-			path = Class;
-			sourceTree = "<group>";
-		};
-		4EFB05B42188291400369E89 /* Struct */ = {
-			isa = PBXGroup;
-			children = (
-				4EFB05BC21882AB300369E89 /* UserStruct.swift */,
-			);
-			path = Struct;
 			sourceTree = "<group>";
 		};
 		4EFB05B72188294600369E89 /* Mock */ = {
@@ -851,6 +820,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E140688218F5E08002478A8 /* search.json in Resources */,
 				4E140684218F583D002478A8 /* jakeWharton.json in Resources */,
 				4E140683218F583A002478A8 /* jakeWhartonRepos.json in Resources */,
 			);
@@ -964,7 +934,6 @@
 				4EFB05C6218841AD00369E89 /* ParseManager.swift in Sources */,
 				4E88FBE8218BBEA9001F6CBA /* UserDetailRouterData.swift in Sources */,
 				4E36A99921898F4300F02A1B /* AvatarComponent.swift in Sources */,
-				4EFB05B62188293C00369E89 /* UserClass.swift in Sources */,
 				4E36A9472188B60100F02A1B /* SearchViewController.swift in Sources */,
 				4E36A96F2188EE0A00F02A1B /* SearchModel.swift in Sources */,
 				4EFB05C321883E4900369E89 /* Mock.swift in Sources */,
@@ -998,7 +967,6 @@
 				4E36A9AB2189B88F00F02A1B /* ImageView.swift in Sources */,
 				4E36A9502188B66D00F02A1B /* WindowManager.swift in Sources */,
 				4E36A94B2188B63000F02A1B /* UserDetailViewController.swift in Sources */,
-				4EFB05BD21882AB300369E89 /* UserStruct.swift in Sources */,
 				4E36A9AE2189B9B300F02A1B /* AttributeStackView.swift in Sources */,
 				4ECA4CFA218CACEE0045B8F0 /* String+Extensions.swift in Sources */,
 				4E36A98721898E1A00F02A1B /* UITableView+QueerViewBuilder.swift in Sources */,
@@ -1025,7 +993,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EFB058F2188288900369E89 /* VNGRSTests.swift in Sources */,
-				4EFB05C121883D1000369E89 /* JSONParseTest.swift in Sources */,
+				4E140685218F5BD7002478A8 /* ParseManager.swift in Sources */,
 				4E140682218F5833002478A8 /* Mock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
