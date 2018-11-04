@@ -10,8 +10,10 @@ import UIKit
 
 
 enum Mock: String {
-    case users = "users"
-    
+    case jakeWharton = "jakeWharton"
+    case jakeWhartonRepos = "jakeWhartonRepos"
+    case search = "search"
+
     
     var json: [String: Any] {
         
