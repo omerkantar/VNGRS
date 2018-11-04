@@ -10,8 +10,11 @@ import UIKit
 
 
 class AvatarComponentViewModel: AvatarComponentDataSource {
+    
     var title: String
     var imageUrl: String?
+    
+    
     init(title: String, imageUrl: String?) {
         self.title = title
         self.imageUrl = imageUrl

@@ -10,10 +10,14 @@ import UIKit
 
 
 
-class UserDetailViewController: BaseViewController, RouterDataSourceInjector {
+class UserDetailViewController: BaseViewController, RouterDataSourceInjector, ViewModelInjector {
+    
+    typealias ViewModel = UserDetailViewModel
+
     
     
     @IBOutlet weak var tableView: QueerTableView!
+    
     
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -24,9 +28,14 @@ class UserDetailViewController: BaseViewController, RouterDataSourceInjector {
     // MARK: - RouterDataSourceInjector
     typealias DataSource = UserDetailDataSource
     func configuration(dataSource: UserDetailDataSource) {
+        self.title = dataSource.title
         
     }
     
 
+    // MARK: - Load data
+    func loadData() {
+        
+    }
 
 }

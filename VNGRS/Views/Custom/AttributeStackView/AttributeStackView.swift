@@ -9,6 +9,8 @@
 import UIKit
 
 
+// Image gelebilir, label olur.
+// Forks, Stars, Watching icon&emoji bulamadim 🙈
 
 class AttributeStackView: UIStackView {
 
@@ -18,6 +20,8 @@ class AttributeStackView: UIStackView {
     // identifier verilmesi
     var identifier: Any? = nil
     
+    private var viewModel: AttributeStackViewModel?
+    
     // Awake from nib
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,7 +29,7 @@ class AttributeStackView: UIStackView {
         label?.font = UIFont.systemFont(ofSize: 12.0, weight: .semibold)
     }
     
-    func build(text: String?,
+    func build(text: String? = nil,
                imageColor: UIColor? = nil,
                icon: UIImage? = nil) {
         
@@ -33,6 +37,12 @@ class AttributeStackView: UIStackView {
         if let color = imageColor {
             imageView?.backgroundColor = color
         }
-        imageView?.image = icon
+        imageView?.image = icon        
+        self.isHidden = (text == nil && imageColor == nil && icon == nil)
+    }
+    
+    func build(_ builder: AttributeStackViewModel) {
+        
+        build(text: builder.title, imageColor: builder.color, icon: nil)
     }
 }
