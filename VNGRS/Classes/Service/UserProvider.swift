@@ -7,7 +7,41 @@
 //
 
 import UIKit
+import Moya
 
-class UserProvider: NSObject {
 
+extension UserService {
+    public enum UserTarget: TargetType, TargetParametersDataSource {
+        
+        
+        case get(login: String)
+        case repository(login: String)
+        
+        public var path: String {
+            switch self {
+            case .get(let login):
+                return "users/\(login)"
+            case .repository(let login):
+                return "users/\(login)/repos"
+            }
+        }
+        
+        var parameters: [String: Any]? {
+            return nil
+        }
+        
+        public var method: Moya.Method {
+            return Moya.Method.get
+        }
+        
+    }
+}
+
+
+struct UserService: ServiceInjector {
+    
+    typealias Target = UserTarget
+    
+    static var shared = UserService()
+    
 }
