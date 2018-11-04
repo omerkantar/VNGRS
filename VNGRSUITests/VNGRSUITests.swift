@@ -10,6 +10,9 @@ import XCTest
 
 class VNGRSUITests: XCTestCase {
 
+    var app: XCUIApplication!
+    
+    
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
 
@@ -17,7 +20,9 @@ class VNGRSUITests: XCTestCase {
         continueAfterFailure = false
 
         // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
-        XCUIApplication().launch()
+        app = XCUIApplication()
+        
+        app.launch()
 
         // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
@@ -26,17 +31,34 @@ class VNGRSUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
+    
     //
     func testSearch() {
         
+        let keys = ["v", "n", "g", "r", "s"]
+        keys.forEach { (obj) in
+            app.keys[obj].tap()
+        }
+        app.buttons["Search"].tap()
+        let textField = app.textFields["Search 🚀"]
+        let search = textField.value
+        XCTAssert(search != nil)
+        XCTAssert(search! is String)
+        XCTAssert((search as! String) == "vngrs")
+    }
+
+    
+    func testRepositoryDetail() {
+        testSearch()
         
+        let table = app.tables.firstMatch
+        XCTAssert(table.cells.count > 0)
+        table.cells.firstMatch.tap()
+        
+    }
 
-
-
+    
+    var searchTextField: XCUIElement? {
+        return app.textFields["Search 🚀"]
     }
 }
