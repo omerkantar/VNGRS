@@ -48,6 +48,7 @@ class CollectionTableViewCell: UITableViewCell, ViewModelObserver {
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
+        collectionView.contentInset = UIEdgeInsets(top: 0.0, left: 14.0, bottom: 0.0, right: 14.0)
     }
 
     override func configuration(model: Any?) {
@@ -76,6 +77,7 @@ class CollectionTableViewCell: UITableViewCell, ViewModelObserver {
         
         switch key {
         case .models:
+            moreButton.isHidden = self.dataSource!.hiddenMoreButton
             collectionView.models = object as? [Any]
             collectionView.reloadData()
         }

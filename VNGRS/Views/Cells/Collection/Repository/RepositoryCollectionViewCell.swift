@@ -29,13 +29,16 @@ class RepositoryCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.layer.shadowColor = UIColor.gray.cgColor
-        self.layer.shadowOffset = .zero
-        self.layer.shadowRadius = 4.0
-        self.layer.shadowOpacity = 0.5
-        
-        container.layer.cornerRadius = 20.0
+        self.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
+        self.layer.shadowRadius = 5.0
+        self.layer.shadowOpacity = 0.25
+        self.clipsToBounds = false
+        container.layer.borderColor = UIColor.lightGray.cgColor
+        container.layer.borderWidth = 0.25
+        container.layer.cornerRadius = 8.0
         container.layer.masksToBounds = true
         
+        languageAttributeStackView.imageView?.circle()
     }
 
     
@@ -46,11 +49,10 @@ class RepositoryCollectionViewCell: UICollectionViewCell {
         self.viewModel = vm
         nameLabel.text = repository.name
         createAtLabel.text = vm.createdDate
-        descriptionLabel.text = repository.description
+        descriptionLabel.text = repository.description ?? "None description"
         licenseLabel.text = repository.license?.name
         languageAttributeStackView.build(text: vm.language?.title, imageColor: vm.language?.color)
         starsAttributeStackView.build(text: vm.stars?.title)
-        
     }
     
     

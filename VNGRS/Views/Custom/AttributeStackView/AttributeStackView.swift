@@ -27,12 +27,13 @@ class AttributeStackView: UIStackView {
     // Awake from nib
     override func awakeFromNib() {
         super.awakeFromNib()
-        label?.textColor = UIColor.gray
-        label?.font = UIFont.systemFont(ofSize: 12.0, weight: .semibold)
+//        label?.textColor = UIColor.gray
+//        label?.font = UIFont.systemFont(ofSize: 12.0, weight: .semibold)
         
-        tap(toView: self) { [weak self] (gr) in
-            WebsiteButton.tapped(url: self?.websiteUrl)
-        }
+        let tap = UITapGestureRecognizer(target: self, action: #selector(websiteButtonTapped))
+        label?.isUserInteractionEnabled = true
+        self.isUserInteractionEnabled = true
+        self.addGestureRecognizer(tap)
     }
     
     func build(text: String? = nil,
@@ -51,6 +52,11 @@ class AttributeStackView: UIStackView {
         
         build(text: builder.title, imageColor: builder.color, icon: nil)
         self.websiteUrl = builder.webUrl
+    }
+    
+    
+    @objc func websiteButtonTapped() {
+        WebsiteButton.tapped(url: self.websiteUrl)
     }
     
 }

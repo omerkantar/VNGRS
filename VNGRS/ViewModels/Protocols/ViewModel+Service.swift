@@ -21,7 +21,7 @@ protocol ViewModelServiceInjector {
     var serviceInteractor: ViewModelServiceInteractor? { set get }
     
     // completion
-    func serviceCompleted(result: ServiceResult) -> Void
+    func serviceCompleted(target: Service.Target, result: ServiceResult) -> Void
 }
 
 // Request atilmasi da buradan saglancak
@@ -39,13 +39,13 @@ extension ViewModelServiceInjector {
             case .failure(let error, let isMappingError):
                 self.serviceInteractor?.serviceNetworError(error: error, isMappingError: isMappingError)
             }
-            self.serviceCompleted(result: result)
+            self.serviceCompleted(target: target, result: result)
         }
         
     }
     
     // completed
-    func serviceCompleted(result: ServiceResult) -> Void {
+    func serviceCompleted(target: Service.Target, result: ServiceResult) -> Void {
         
     }
 }

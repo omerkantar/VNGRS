@@ -13,7 +13,7 @@ class RepositoryCollectionTableCellModel: CollectionTableViewDataSource {
     
     var title: String = "Repositories"
     
-    var hiddenMoreButton: Bool = false
+    var hiddenMoreButton: Bool = true
     
     var cellType: UICollectionView.CellType = .repository
     
@@ -29,13 +29,22 @@ class RepositoryCollectionTableCellModel: CollectionTableViewDataSource {
         }
     }
     
-    init() {
-        let screenSize = UIScreen.main.bounds.size
-        let space: CGFloat = 20.0
-        let width: CGFloat = screenSize.width - space
-        cellSize = CGSize(width: width, height: 280.0)
+    var webUrl: String? {
+        didSet {
+            self.hiddenMoreButton = WebsiteButton.hiddenButton(url: webUrl)
+        }
     }
     
+    init() {
+        let screenSize = UIScreen.main.bounds.size
+        let space: CGFloat = 30.0
+        let width: CGFloat = screenSize.width - space
+        cellSize = CGSize(width: width, height: 260.0)
+    }
+    
+    func moreButtonTapped() {
+        WebsiteButton.tapped(url: webUrl)
+    }
 }
 
 

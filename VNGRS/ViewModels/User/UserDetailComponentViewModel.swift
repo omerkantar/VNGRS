@@ -13,21 +13,22 @@ class UserDetailComponentViewModel {
     var model: UserModel
     var avatar: AvatarComponentViewModel
     var createdAtDate: String?
-    var following: AttributeStackViewModel?
-    var followers: AttributeStackViewModel?
-    var gists: AttributeStackViewModel?
-    var repositories: AttributeStackViewModel?
+    var following: AttributeStackViewModel
+    var followers: AttributeStackViewModel
+    var gists: AttributeStackViewModel
+    var repositories: AttributeStackViewModel
     
     init(model: UserModel) {
         self.model = model
+        self.createdAtDate = model.createdAt?.dateString
         self.avatar = AvatarComponentViewModel(user: model)
         self.createdAtDate = model.createdAt?.dateString
         
+        self.followers = AttributeStackViewModel(title: model.numberOfFollowers.numberOfForks, webUrl: model.followersUrl)
         
-        self.followers = AttributeStackViewModel(title: model.numberOfFollowers.numberOfForks)
-        self.following = AttributeStackViewModel(title: model.numberOfFollowings.numberOfFollowings)
-        self.gists = AttributeStackViewModel(title: model.numberOfGists.numberOfGists)
-        self.repositories = AttributeStackViewModel(title: model.numberOfPublicRepos.numberOfRepositories)
+        self.following = AttributeStackViewModel(title: model.numberOfFollowings.numberOfFollowings, webUrl: model.followingUrl)
+        self.gists = AttributeStackViewModel(title: model.numberOfGists.numberOfGists, webUrl: model.gitstUrl)
+        self.repositories = AttributeStackViewModel(title: model.numberOfPublicRepos.numberOfRepositories, webUrl: model.reposUrl)
     }
     
 

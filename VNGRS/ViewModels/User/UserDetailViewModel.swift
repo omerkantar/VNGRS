@@ -21,6 +21,8 @@ class UserDetailViewModel: ViewModelDataSourceInjector, ViewModelServiceInjector
     var repository = RepositoryCollectionTableCellModel()
     var repositories: [RepositoryCellModel]?
     
+    weak var componentView: UserDetailComponent?
+    
     // Data source gelip bind edecek
     typealias DataSource = UserDetailDataSource
     func bind(dataSource: UserDetailDataSource) {
@@ -44,21 +46,36 @@ class UserDetailViewModel: ViewModelDataSourceInjector, ViewModelServiceInjector
     }
     
     private func getRepositories(title: String) {
+        StatusBarProgress.Const.showing = false
         self.request(target: Service.Target.repository(login: title), type: [RepositoryModel].self) { (list) in
             self.loadedData(list: list)
+        }
+    }
+    
+    func serviceCompleted(target: UserService.UserTarget, result: ServiceResult) {
+        switch target {
+        case .repository:
+            StatusBarProgress.Const.showing = true
+        default: break
         }
     }
     
     // Request sonucu response
     func loadedData(model: UserModel) {
         self.model  = model
-        self.component = UserDetailComponentViewModel(model: model)
+        let component = UserDetailComponentViewModel(model: model)
+        componentView?.configuration(model: component)
+        self.component = component
+        self.repository.webUrl = model.websiteUrl
     }
     
     func loadedData(list: [RepositoryModel]) {
         self.repositories = list.compactMap { RepositoryCellModel(model: $0) }
-        self.repository.cellModels = list
+        self.repository.cellModels = self.repositories
     }
+    
+  
+    
 }
 
 
