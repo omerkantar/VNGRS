@@ -10,12 +10,26 @@ import UIKit
 
 class RepositoryDetailBottomBar: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
+    @IBOutlet weak var avatar: AvatarComponent!
+    @IBOutlet weak var websiteButton: WebsiteButton!
 
+    
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        avatar.imageView.circle()
+        avatar.addUserDetailInteraction()
+    
+    }
+    
+    // MARK: - Configuration
+    func configuration(avatar: AvatarComponentViewModel?, websiteUrl: String?) {
+        if let model = avatar {
+            self.avatar.isHidden = false
+            self.avatar.configuration(model: model)
+        } else {
+            self.avatar.isHidden = true
+        }
+        websiteButton.build(url: websiteUrl)
+    }
 }

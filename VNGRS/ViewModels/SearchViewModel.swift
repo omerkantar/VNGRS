@@ -21,14 +21,6 @@ class SearchViewModel: ViewModelServiceInjector {
     // view controller eklenecek
     // TODO: - View controller+ alert eklenebilir
     var serviceInteractor: ViewModelServiceInteractor?
-
-    
-    // Keyword
-//    var keyword = Variable<String?>("") {
-//        didSet {
-//            self.search(keyword: keyword.value)
-//        }
-//    }
     
     // bu table view bind edilecek
     var repositories = Variable<[RepositoryCellModel]>([])
@@ -36,7 +28,7 @@ class SearchViewModel: ViewModelServiceInjector {
     // For cancel request sondaki request cancel edilecek
     private var isLoading: Bool = false
     
-    
+    // Search
     func search(keyword: String?) {
         
         guard let keyword = keyword else {
@@ -48,15 +40,7 @@ class SearchViewModel: ViewModelServiceInjector {
             return
         }
         
-        if isLoading {
-            // senkron calissin
-            DispatchQueue.init(label: "cancelRequests").sync {
-                SearchService.shared.cancelRequest()
-            }
-            // buraya gelmeden ustteki bitsin
-        }
         // repository insa edilecek
-
         let target = Service.Target.keyword(query: keyword, page: 1, perPage: 20)
         
         request(target: target, type: SearchModel.self) { [weak self] (model) in

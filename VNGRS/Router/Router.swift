@@ -48,7 +48,7 @@ class Router {
         case .website(let url):
             
             let safariViewController = SFSafariViewController(url: url)
-            nc.pushViewController(safariViewController, animated: true)
+            nc.present(safariViewController, animated: true, completion: nil)
         }
         
     }
