@@ -37,6 +37,20 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                     </collectionView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KfW-w0-28t">
+                        <rect key="frame" x="0.0" y="51.5" width="320" height="227"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Wj7-lS-TcD">
+                                <rect key="frame" x="150" y="103.5" width="20" height="20"/>
+                                <color key="color" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Wj7-lS-TcD" firstAttribute="centerX" secondItem="KfW-w0-28t" secondAttribute="centerX" id="sy4-WM-CNH"/>
+                            <constraint firstItem="Wj7-lS-TcD" firstAttribute="centerY" secondItem="KfW-w0-28t" secondAttribute="centerY" id="vpO-cY-rpP"/>
+                        </constraints>
+                    </view>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sXN-Um-l94">
                         <rect key="frame" x="271" y="18.5" width="37" height="30"/>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
@@ -50,18 +64,24 @@
                     <constraint firstItem="TSv-Y3-mts" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="CZG-Pk-viX"/>
                     <constraint firstItem="6E9-cQ-RCe" firstAttribute="top" secondItem="TSv-Y3-mts" secondAttribute="bottom" constant="8" id="J2L-hf-W0w"/>
                     <constraint firstAttribute="trailing" secondItem="sXN-Um-l94" secondAttribute="trailing" constant="12" id="Lqv-Ml-sAr"/>
+                    <constraint firstItem="KfW-w0-28t" firstAttribute="top" secondItem="6E9-cQ-RCe" secondAttribute="top" id="NA6-4c-rff"/>
+                    <constraint firstItem="KfW-w0-28t" firstAttribute="bottom" secondItem="6E9-cQ-RCe" secondAttribute="bottom" id="NUa-fO-ikG"/>
                     <constraint firstAttribute="bottom" secondItem="6E9-cQ-RCe" secondAttribute="bottom" id="VZX-MB-Qyy"/>
                     <constraint firstItem="6E9-cQ-RCe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="YuP-LC-B3s"/>
+                    <constraint firstItem="KfW-w0-28t" firstAttribute="trailing" secondItem="6E9-cQ-RCe" secondAttribute="trailing" id="bgU-jc-eA8"/>
                     <constraint firstAttribute="trailing" secondItem="6E9-cQ-RCe" secondAttribute="trailing" id="i9K-ar-clH"/>
                     <constraint firstItem="6E9-cQ-RCe" firstAttribute="top" secondItem="sXN-Um-l94" secondAttribute="bottom" constant="3" id="idE-EC-baW"/>
+                    <constraint firstItem="KfW-w0-28t" firstAttribute="leading" secondItem="6E9-cQ-RCe" secondAttribute="leading" id="jAd-Uf-b9w"/>
                     <constraint firstItem="TSv-Y3-mts" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="u1F-6F-2nd"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="activityIndicator" destination="Wj7-lS-TcD" id="XPM-gY-1Hi"/>
                 <outlet property="collectionView" destination="6E9-cQ-RCe" id="P8V-gg-1By"/>
                 <outlet property="collectionViewHeightConstraint" destination="Vzb-ST-uyR" id="3pv-Dw-Sg0"/>
+                <outlet property="loadingView" destination="KfW-w0-28t" id="QLu-fW-Kie"/>
                 <outlet property="moreButton" destination="sXN-Um-l94" id="Jlw-jz-2LW"/>
                 <outlet property="titleLabel" destination="TSv-Y3-mts" id="SSd-7c-jM9"/>
             </connections>

@@ -40,6 +40,8 @@ class CollectionTableViewCell: UITableViewCell, ViewModelObserver {
     @IBOutlet weak var moreButton: UIButton!
     @IBOutlet weak var collectionView: QueerCollectionView!
     @IBOutlet weak var collectionViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var loadingView: UIView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     // data source
     var dataSource: CollectionTableViewDataSource?
@@ -49,6 +51,7 @@ class CollectionTableViewCell: UITableViewCell, ViewModelObserver {
         super.awakeFromNib()
         selectionStyle = .none
         collectionView.contentInset = UIEdgeInsets(top: 0.0, left: 14.0, bottom: 0.0, right: 14.0)
+        loading(show: true)
     }
 
     override func configuration(model: Any?) {
@@ -66,7 +69,6 @@ class CollectionTableViewCell: UITableViewCell, ViewModelObserver {
         
         // Note: - Horizontal oldugundan
         self.collectionViewHeightConstraint.constant = dataSource.cellSize.height
-        
     }
     
     
@@ -77,6 +79,7 @@ class CollectionTableViewCell: UITableViewCell, ViewModelObserver {
         
         switch key {
         case .models:
+            loading(show: false)
             moreButton.isHidden = self.dataSource!.hiddenMoreButton
             collectionView.models = object as? [Any]
             collectionView.reloadData()
@@ -89,5 +92,15 @@ class CollectionTableViewCell: UITableViewCell, ViewModelObserver {
         dataSource?.moreButtonTapped()
     }
     
+    
+    // MARK: - Loading view
+    private func loading(show: Bool) {
+        self.loadingView.isHidden = !show
+        if show {
+            activityIndicator.startAnimating()
+        } else {
+            activityIndicator.stopAnimating()
+        }
+    }
 }
 
