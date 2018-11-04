@@ -28,10 +28,10 @@ class RepositoryCollectionViewCell: UICollectionViewCell {
     // Initialization code
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.layer.shadowColor = UIColor.gray.cgColor
+        self.layer.shadowColor = UIColor.lightGray.cgColor
         self.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
         self.layer.shadowRadius = 5.0
-        self.layer.shadowOpacity = 0.25
+        self.layer.shadowOpacity = 0.5
         self.clipsToBounds = false
         container.layer.borderColor = UIColor.lightGray.cgColor
         container.layer.borderWidth = 0.25
@@ -59,8 +59,15 @@ class RepositoryCollectionViewCell: UICollectionViewCell {
     // MARK: - Highligted
     override var isHighlighted: Bool {
         didSet {
-            let scale: CGFloat = isHighlighted ? 0.98 : 1.0
+            var scale: CGFloat = 1.0
+            var radius: CGFloat = 5.0
+            if isHighlighted {
+                radius = 1.0
+                scale = 0.98
+            }
+            
             UIView.animate(withDuration: 0.3) {
+                self.layer.shadowRadius = radius
                 self.container.transform = CGAffineTransform(scaleX: scale, y: scale)
             }
         }
