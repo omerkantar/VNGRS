@@ -10,7 +10,7 @@ import UIKit
 import Moya
 
 
-
+typealias ServiceResult = Service.Result
 // TODO: View model'e bu service class inject edilecek injector protocol ile
 protocol ViewModelServiceInjector {
     // generic Service type
@@ -19,6 +19,9 @@ protocol ViewModelServiceInjector {
     var service: Service { get }
     // service interactor protocol ile view controller'a gidip pop up vb seyler cikartilacak
     var serviceInteractor: ViewModelServiceInteractor? { set get }
+    
+    // completion
+    func serviceCompleted(result: ServiceResult) -> Void
 }
 
 // Request atilmasi da buradan saglancak
@@ -36,11 +39,18 @@ extension ViewModelServiceInjector {
             case .failure(let error, let isMappingError):
                 self.serviceInteractor?.serviceNetworError(error: error, isMappingError: isMappingError)
             }
+            self.serviceCompleted(result: result)
         }
+        
+    }
+    
+    // completed
+    func serviceCompleted(result: ServiceResult) -> Void {
         
     }
 }
 
+// UIViewController hata cikartabilir buradan 
 protocol ViewModelServiceInteractor {
     func serviceNetworError(error: Error?, isMappingError: Bool)
 }

@@ -49,4 +49,8 @@ extension Int {
         return self > 0 ? numberOf(item: "Gists:") : nil
     }
     
+    var numberOfRepositories: String? {
+        return self > 0 ? numberOf(item: "Repositories:") : nil
+    }
+    
 }

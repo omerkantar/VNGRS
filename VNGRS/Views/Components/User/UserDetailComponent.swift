@@ -24,6 +24,8 @@ class UserDetailComponent: UIView {
     @IBOutlet weak var createdAtLabel: UILabel!
     
     
+    var viewModel: UserDetailComponentViewModel?
+    
     // initialize code
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -37,9 +39,10 @@ class UserDetailComponent: UIView {
     
     // MARK: - configuration
     override func configuration(model: Any?) {
-        guard let vm = model as? UserDetailViewModel else { return }
+        guard let vm = model as? UserDetailComponentViewModel else { return }
         
         avatar.configuration(model: vm.avatar)
+        
     }
     
     

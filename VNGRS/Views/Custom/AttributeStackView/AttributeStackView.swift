@@ -22,11 +22,17 @@ class AttributeStackView: UIStackView {
     
     private var viewModel: AttributeStackViewModel?
     
+    private var websiteUrl: String?
+    
     // Awake from nib
     override func awakeFromNib() {
         super.awakeFromNib()
         label?.textColor = UIColor.gray
         label?.font = UIFont.systemFont(ofSize: 12.0, weight: .semibold)
+        
+        tap(toView: self) { [weak self] (gr) in
+            WebsiteButton.tapped(url: self?.websiteUrl)
+        }
     }
     
     func build(text: String? = nil,
@@ -44,5 +50,7 @@ class AttributeStackView: UIStackView {
     func build(_ builder: AttributeStackViewModel) {
         
         build(text: builder.title, imageColor: builder.color, icon: nil)
+        self.websiteUrl = builder.webUrl
     }
+    
 }

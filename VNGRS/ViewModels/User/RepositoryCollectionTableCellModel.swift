@@ -10,9 +10,6 @@ import UIKit
 
 class RepositoryCollectionTableCellModel: CollectionTableViewDataSource {
     
-    public enum ObserverKey: String {
-        case models = "models"
-    }
     
     var title: String = "Repositories"
     
@@ -28,7 +25,7 @@ class RepositoryCollectionTableCellModel: CollectionTableViewDataSource {
    
     var cellModels: [Any]? = nil {
         didSet {
-            observer?.observe(cellModels, forKey: ObserverKey.models.rawValue, sender: nil)
+            observer?.observe(cellModels, forKey: ViewModelObserverKey.models.rawValue, sender: nil)
         }
     }
     

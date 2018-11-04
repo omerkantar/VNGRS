@@ -39,6 +39,7 @@ class CollectionTableViewCell: UITableViewCell, ViewModelObserver {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var moreButton: UIButton!
     @IBOutlet weak var collectionView: QueerCollectionView!
+    @IBOutlet weak var collectionViewHeightConstraint: NSLayoutConstraint!
     
     // data source
     var dataSource: CollectionTableViewDataSource?
@@ -47,7 +48,6 @@ class CollectionTableViewCell: UITableViewCell, ViewModelObserver {
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
-        
     }
 
     override func configuration(model: Any?) {
@@ -63,12 +63,22 @@ class CollectionTableViewCell: UITableViewCell, ViewModelObserver {
 
         }
         
+        // Note: - Horizontal oldugundan
+        self.collectionViewHeightConstraint.constant = dataSource.cellSize.height
+        
     }
     
     
     // MARK: - Observer
     func observe(_ object: Any?, forKey: String, sender: Any?) {
         
+        guard let key = ViewModelObserverKey.init(rawValue: forKey) else { return }
+        
+        switch key {
+        case .models:
+            collectionView.models = object as? [Any]
+            collectionView.reloadData()
+        }
     }
     
     
