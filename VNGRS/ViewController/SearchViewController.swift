@@ -47,6 +47,7 @@ class SearchViewController: BaseViewController {
             self?.viewModel.search(keyword: self?.searchComponent.textField.text)
             
         }.disposed(by: disposeBag)
+        
         // table view bind edilmesi
         viewModel.repositories.asObservable().subscribe { [weak self] (list) in
             
