@@ -9,7 +9,5 @@
 import UIKit
 
 struct RepositoryDetailRouterData: RouterDataSource {
-    
     var model: RepositoryModel
-    
 }

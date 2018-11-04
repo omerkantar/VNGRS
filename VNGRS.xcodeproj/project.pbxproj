@@ -58,11 +58,21 @@
 		4E88FBEF218BD5C1001F6CBA /* RepositoryDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88FBEE218BD5C1001F6CBA /* RepositoryDetailViewModel.swift */; };
 		4E88FBF1218BD7A6001F6CBA /* LicenseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88FBF0218BD7A6001F6CBA /* LicenseModel.swift */; };
 		4EB222C72189D6820051BE3E /* UserDetailComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB222C62189D6820051BE3E /* UserDetailComponent.swift */; };
-		4EB222C92189D6E00051BE3E /* UIView+Gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB222C82189D6E00051BE3E /* UIView+Gesture.swift */; };
+		4EB222C92189D6E00051BE3E /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB222C82189D6E00051BE3E /* UIView+Extensions.swift */; };
 		4EB222CB2189F21B0051BE3E /* UIColor+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB222CA2189F21B0051BE3E /* UIColor+Theme.swift */; };
 		4EB222CD2189F23E0051BE3E /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB222CC2189F23E0051BE3E /* Theme.swift */; };
 		4EB222CF2189F7780051BE3E /* UIFont+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB222CE2189F7780051BE3E /* UIFont+Style.swift */; };
 		4EB222D8218A72270051BE3E /* ViewModel+Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB222D7218A72270051BE3E /* ViewModel+Service.swift */; };
+		4ECA4CF7218CAC6D0045B8F0 /* StatusBarProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECA4CF6218CAC6D0045B8F0 /* StatusBarProgress.swift */; };
+		4ECA4CFA218CACEE0045B8F0 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECA4CF9218CACEE0045B8F0 /* String+Extensions.swift */; };
+		4ECA4CFE218E51F80045B8F0 /* CollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECA4CFC218E51F80045B8F0 /* CollectionTableViewCell.swift */; };
+		4ECA4CFF218E51F80045B8F0 /* CollectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ECA4CFD218E51F80045B8F0 /* CollectionTableViewCell.xib */; };
+		4ECA4D04218E5DCF0045B8F0 /* RepositoryCollectionTableCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECA4D03218E5DCF0045B8F0 /* RepositoryCollectionTableCellModel.swift */; };
+		4ECA4D06218E62660045B8F0 /* UserProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECA4D05218E62660045B8F0 /* UserProvider.swift */; };
+		4ECA4D09218E64EA0045B8F0 /* UserDetailComponent.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ECA4D08218E64EA0045B8F0 /* UserDetailComponent.xib */; };
+		4ECA4D0B218EE4D20045B8F0 /* WebsiteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECA4D0A218EE4D20045B8F0 /* WebsiteButton.swift */; };
+		4ECA4D0D218EF81C0045B8F0 /* UserDetailComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECA4D0C218EF81C0045B8F0 /* UserDetailComponentViewModel.swift */; };
+		4ECA4D0F218F1C870045B8F0 /* RepositoryDetailBottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECA4D0E218F1C870045B8F0 /* RepositoryDetailBottomBar.swift */; };
 		4EFA920B218B92B0009ADFB5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4EFA920D218B92B0009ADFB5 /* Localizable.strings */; };
 		4EFB057A2188288700369E89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFB05792188288700369E89 /* AppDelegate.swift */; };
 		4EFB057F2188288700369E89 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EFB057D2188288700369E89 /* Search.storyboard */; };
@@ -152,11 +162,21 @@
 		4E88FBEE218BD5C1001F6CBA /* RepositoryDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailViewModel.swift; sourceTree = "<group>"; };
 		4E88FBF0218BD7A6001F6CBA /* LicenseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseModel.swift; sourceTree = "<group>"; };
 		4EB222C62189D6820051BE3E /* UserDetailComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailComponent.swift; sourceTree = "<group>"; };
-		4EB222C82189D6E00051BE3E /* UIView+Gesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Gesture.swift"; sourceTree = "<group>"; };
+		4EB222C82189D6E00051BE3E /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		4EB222CA2189F21B0051BE3E /* UIColor+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Theme.swift"; sourceTree = "<group>"; };
 		4EB222CC2189F23E0051BE3E /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		4EB222CE2189F7780051BE3E /* UIFont+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Style.swift"; sourceTree = "<group>"; };
 		4EB222D7218A72270051BE3E /* ViewModel+Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewModel+Service.swift"; sourceTree = "<group>"; };
+		4ECA4CF6218CAC6D0045B8F0 /* StatusBarProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarProgress.swift; sourceTree = "<group>"; };
+		4ECA4CF9218CACEE0045B8F0 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		4ECA4CFC218E51F80045B8F0 /* CollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionTableViewCell.swift; sourceTree = "<group>"; };
+		4ECA4CFD218E51F80045B8F0 /* CollectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionTableViewCell.xib; sourceTree = "<group>"; };
+		4ECA4D03218E5DCF0045B8F0 /* RepositoryCollectionTableCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCollectionTableCellModel.swift; sourceTree = "<group>"; };
+		4ECA4D05218E62660045B8F0 /* UserProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProvider.swift; sourceTree = "<group>"; };
+		4ECA4D08218E64EA0045B8F0 /* UserDetailComponent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailComponent.xib; sourceTree = "<group>"; };
+		4ECA4D0A218EE4D20045B8F0 /* WebsiteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsiteButton.swift; sourceTree = "<group>"; };
+		4ECA4D0C218EF81C0045B8F0 /* UserDetailComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailComponentViewModel.swift; sourceTree = "<group>"; };
+		4ECA4D0E218F1C870045B8F0 /* RepositoryDetailBottomBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailBottomBar.swift; sourceTree = "<group>"; };
 		4EFA9209218B92A3009ADFB5 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Search.strings; sourceTree = "<group>"; };
 		4EFA920A218B92A3009ADFB5 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		4EFA920E218B92B7009ADFB5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -227,6 +247,7 @@
 		4E36A9532188B85100F02A1B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				4ECA4CF8218CACDD0045B8F0 /* Foundation */,
 				4E36A9542188B85F00F02A1B /* UIKit */,
 			);
 			path = Extensions;
@@ -236,7 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				4EB222D3218A59A90051BE3E /* UIViewController */,
-				4EB222C82189D6E00051BE3E /* UIView+Gesture.swift */,
+				4EB222C82189D6E00051BE3E /* UIView+Extensions.swift */,
 				4EB222CA2189F21B0051BE3E /* UIColor+Theme.swift */,
 				4EB222CE2189F7780051BE3E /* UIFont+Style.swift */,
 			);
@@ -314,7 +335,7 @@
 		4E36A98F21898E4A00F02A1B /* Table */ = {
 			isa = PBXGroup;
 			children = (
-				4E88FBE2218BBB36001F6CBA /* Collection */,
+				4ECA4CFB218E51E40045B8F0 /* Collection */,
 				4E36A99A21898F7400F02A1B /* Keyword */,
 				4E36A99121898E5600F02A1B /* Repository */,
 			);
@@ -335,6 +356,7 @@
 			children = (
 				4E36A99821898F4300F02A1B /* AvatarComponent.swift */,
 				4EB222C62189D6820051BE3E /* UserDetailComponent.swift */,
+				4ECA4D08218E64EA0045B8F0 /* UserDetailComponent.xib */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -351,8 +373,10 @@
 		4E36A9A82189B87400F02A1B /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				4ECA4CF5218CAC590045B8F0 /* Progress */,
 				4E36A9AC2189B98500F02A1B /* AttributeStackView */,
 				4E36A9A92189B87900F02A1B /* Image */,
+				4ECA4D0A218EE4D20045B8F0 /* WebsiteButton.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -377,6 +401,7 @@
 			isa = PBXGroup;
 			children = (
 				4E88FBDA218BAB45001F6CBA /* RepositoryComponent.swift */,
+				4ECA4D0E218F1C870045B8F0 /* RepositoryDetailBottomBar.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -396,13 +421,6 @@
 				4E88FBE4218BBB59001F6CBA /* RepositoryCollectionViewCell.xib */,
 			);
 			path = Repository;
-			sourceTree = "<group>";
-		};
-		4E88FBE2218BBB36001F6CBA /* Collection */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Collection;
 			sourceTree = "<group>";
 		};
 		4E88FBED218BD5A6001F6CBA /* Repository */ = {
@@ -429,6 +447,42 @@
 				4EB222D7218A72270051BE3E /* ViewModel+Service.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		4ECA4CF5218CAC590045B8F0 /* Progress */ = {
+			isa = PBXGroup;
+			children = (
+				4ECA4CF6218CAC6D0045B8F0 /* StatusBarProgress.swift */,
+			);
+			path = Progress;
+			sourceTree = "<group>";
+		};
+		4ECA4CF8218CACDD0045B8F0 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				4ECA4CF9218CACEE0045B8F0 /* String+Extensions.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		4ECA4CFB218E51E40045B8F0 /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				4ECA4CFC218E51F80045B8F0 /* CollectionTableViewCell.swift */,
+				4ECA4CFD218E51F80045B8F0 /* CollectionTableViewCell.xib */,
+			);
+			path = Collection;
+			sourceTree = "<group>";
+		};
+		4ECA4D00218E5D9B0045B8F0 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				4E88FBDC218BB728001F6CBA /* AvatarComponentViewModel.swift */,
+				4E88FBDE218BBA76001F6CBA /* UserDetailViewModel.swift */,
+				4ECA4D0C218EF81C0045B8F0 /* UserDetailComponentViewModel.swift */,
+				4ECA4D03218E5DCF0045B8F0 /* RepositoryCollectionTableCellModel.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 		4EFB056D2188288700369E89 = {
@@ -506,11 +560,10 @@
 		4EFB05A82188289A00369E89 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				4ECA4D00218E5D9B0045B8F0 /* User */,
 				4E88FBED218BD5A6001F6CBA /* Repository */,
 				4EB222D6218A72120051BE3E /* Protocols */,
 				4E36A9722189848800F02A1B /* SearchViewModel.swift */,
-				4E88FBDC218BB728001F6CBA /* AvatarComponentViewModel.swift */,
-				4E88FBDE218BBA76001F6CBA /* UserDetailViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -576,6 +629,7 @@
 		4EFB05AF218828E600369E89 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				4ECA4D05218E62660045B8F0 /* UserProvider.swift */,
 				4E36A9642188D68800F02A1B /* SearchProvider.swift */,
 				4E36A9662188D6B000F02A1B /* ServiceInjector.swift */,
 			);
@@ -801,8 +855,10 @@
 				4EFB057F2188288700369E89 /* Search.storyboard in Resources */,
 				4E36A97C218988A200F02A1B /* SearchComponent.xib in Resources */,
 				4EFA920B218B92B0009ADFB5 /* Localizable.strings in Resources */,
+				4ECA4CFF218E51F80045B8F0 /* CollectionTableViewCell.xib in Resources */,
 				4E36A99521898E7000F02A1B /* RepositoryTableViewCell.xib in Resources */,
 				4E36A95A2188CA2600F02A1B /* Repository.storyboard in Resources */,
+				4ECA4D09218E64EA0045B8F0 /* UserDetailComponent.xib in Resources */,
 				4EFB05C72188432300369E89 /* users.json in Resources */,
 				4E88FBE6218BBB59001F6CBA /* RepositoryCollectionViewCell.xib in Resources */,
 			);
@@ -927,11 +983,13 @@
 				4E36A9472188B60100F02A1B /* SearchViewController.swift in Sources */,
 				4E36A96F2188EE0A00F02A1B /* SearchModel.swift in Sources */,
 				4EFB05C321883E4900369E89 /* Mock.swift in Sources */,
+				4ECA4D0D218EF81C0045B8F0 /* UserDetailComponentViewModel.swift in Sources */,
 				4E36A98A21898E1A00F02A1B /* QueerProtocols.swift in Sources */,
-				4EB222C92189D6E00051BE3E /* UIView+Gesture.swift in Sources */,
+				4EB222C92189D6E00051BE3E /* UIView+Extensions.swift in Sources */,
 				4E36A9522188B67600F02A1B /* Router.swift in Sources */,
 				4E36A9A22189933900F02A1B /* UserModel.swift in Sources */,
 				4E36A9A621899DE100F02A1B /* Repository+Language.swift in Sources */,
+				4ECA4D06218E62660045B8F0 /* UserProvider.swift in Sources */,
 				4E36A98E21898E1A00F02A1B /* UICollectionView+CellType.swift in Sources */,
 				4E36A9492188B62400F02A1B /* RepositoryDetailViewController.swift in Sources */,
 				4E36A97E21898D1900F02A1B /* SearchManager.swift in Sources */,
@@ -945,6 +1003,7 @@
 				4EFB057A2188288700369E89 /* AppDelegate.swift in Sources */,
 				4E36A98C21898E1A00F02A1B /* UIView+Queer.swift in Sources */,
 				4E88FBEC218BC9BD001F6CBA /* Router+Navigation.swift in Sources */,
+				4ECA4D0F218F1C870045B8F0 /* RepositoryDetailBottomBar.swift in Sources */,
 				4E36A9712188F93300F02A1B /* SearchComponent.swift in Sources */,
 				4E36A9752189849D00F02A1B /* ViewModel+DataSource.swift in Sources */,
 				4EB222D8218A72270051BE3E /* ViewModel+Service.swift in Sources */,
@@ -956,7 +1015,9 @@
 				4E36A94B2188B63000F02A1B /* UserDetailViewController.swift in Sources */,
 				4EFB05BD21882AB300369E89 /* UserStruct.swift in Sources */,
 				4E36A9AE2189B9B300F02A1B /* AttributeStackView.swift in Sources */,
+				4ECA4CFA218CACEE0045B8F0 /* String+Extensions.swift in Sources */,
 				4E36A98721898E1A00F02A1B /* UITableView+QueerViewBuilder.swift in Sources */,
+				4ECA4D0B218EE4D20045B8F0 /* WebsiteButton.swift in Sources */,
 				4E88FBDD218BB728001F6CBA /* AvatarComponentViewModel.swift in Sources */,
 				4E88FBE5218BBB59001F6CBA /* RepositoryCollectionViewCell.swift in Sources */,
 				4E88FBDB218BAB45001F6CBA /* RepositoryComponent.swift in Sources */,
@@ -965,9 +1026,12 @@
 				4E36A9672188D6B000F02A1B /* ServiceInjector.swift in Sources */,
 				4EB222CD2189F23E0051BE3E /* Theme.swift in Sources */,
 				4E36A9732189848800F02A1B /* SearchViewModel.swift in Sources */,
+				4ECA4CFE218E51F80045B8F0 /* CollectionTableViewCell.swift in Sources */,
 				4E36A98D21898E1A00F02A1B /* QueerTableView.swift in Sources */,
 				4E36A9452188B5F200F02A1B /* BaseViewController.swift in Sources */,
+				4ECA4CF7218CAC6D0045B8F0 /* StatusBarProgress.swift in Sources */,
 				4E36A95C2188CA8E00F02A1B /* UIViewController+Storyboard.swift in Sources */,
+				4ECA4D04218E5DCF0045B8F0 /* RepositoryCollectionTableCellModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

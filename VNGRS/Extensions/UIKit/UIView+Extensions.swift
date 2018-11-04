@@ -19,3 +19,12 @@ extension UIView {
             }).dispose()
     }
 }
+
+
+extension UIView {
+    static func selectedView(backgroundColor: UIColor) -> UIView {
+        let view = UIView(frame: .zero)
+        view.backgroundColor = backgroundColor
+        return view
+    }
+}

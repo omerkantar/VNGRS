@@ -14,8 +14,6 @@ protocol AvatarComponentDataSource {
     var imageUrl: String? { set get }
 }
 
-
-
 class AvatarComponent: UIView {
 
     // Repository ile ortak olan interface builder outlets
@@ -41,13 +39,16 @@ class AvatarComponent: UIView {
     
     
     func addUserDetailInteraction() {
-        
-        guard let title = dataSource?.title else { return }
-        imageView.rx.tapGesture().when(.recognized).subscribe(onNext: { _ in
-                Router.navigate(.userDetail(name: title))
-            }).dispose()
+        self.isUserInteractionEnabled = true
+        let tap = UITapGestureRecognizer(target: self, action: #selector(viewTapped))
+        tap.cancelsTouchesInView = true
+        self.addGestureRecognizer(tap)
     }
     
-    
+    @objc func viewTapped() {
+        if let title = self.dataSource?.title {
+            Router.navigate(.userDetail(name: title))
+        }
+    }
     
 }

@@ -15,45 +15,61 @@ class RepositoryTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var languageStackView: AttributeStackView!
-    @IBOutlet weak var updatedDateLabel: UILabel!
-    @IBOutlet weak var owner: AvatarComponent!
+    @IBOutlet weak var createdDateLabel: UILabel!
+    @IBOutlet weak var ownerComponent: AvatarComponent!
+    @IBOutlet weak var licenseLabel: UILabel!
+    @IBOutlet weak var starStackView: AttributeStackView!
+
     
     var viewModel: RepositoryCellModel?
     
     // Initialization code
     override func awakeFromNib() {
         super.awakeFromNib()
+        selectionStyle = .none
         design()
     }
-
-    
     
     // MARK: - Design
     func design() {
         languageStackView.imageView?.circle()
-        owner.imageView.cornerRadius(12.0)
-        owner.addUserDetailInteraction()
-        languageStackView.isHidden = true
+        ownerComponent.imageView.cornerRadius(12.0)
+        ownerComponent.addUserDetailInteraction()
+    }
+    
+    // Animation
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        super.setHighlighted(highlighted, animated: animated)
+        let color: UIColor = highlighted ? .groupTableViewBackground : .white
+        
+        UIView.animate(withDuration: 0.2) {
+            self.backgroundColor = color
+        }
     }
     
     
     // MARK: - Configuration
     override func configuration(model: Any?) {
         guard let repository = model as? RepositoryCellModel else { return }
+        
+        self.viewModel = repository
         let model = repository.model
         titleLabel.text = model.name
         descriptionLabel.text = model.description
 
-        owner.imageView.loadUrl(model.owner?.avatarUrl)
-        owner.nameLabel.text = model.owner?.login
-        updatedDateLabel.text = repository.model.createdAt
-        languageStackView.isHidden = true
-
-        if let lang = repository.language {
-            languageStackView.isHidden = false
-            languageStackView.label?.text = lang.rawValue
-            languageStackView.build(text: lang.rawValue, imageColor: lang.color, icon: nil)
+        ownerComponent.configuration(model: repository.avatarViewModel)
+        createdDateLabel.text = repository.createdDate
+        if let language = repository.language {
+            languageStackView.build(text: language.title, imageColor: language.color)
         }
+        starStackView.build(text: repository.stars?.title)
+        self.licenseLabel.text = repository.model.license?.name
+
+    }
+    
+    
+    override func didSelect(model: Any?) {
+        viewModel?.navigateRepositoryDetail()
     }
     
 }

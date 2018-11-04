@@ -14,6 +14,9 @@ enum OwnerType: String {
     case organization = "Organization"
 }
 
+// TODO: - aslinda bu user modeli olmali
+// bir tek type yok sanirsam user model'de
+
 struct OwnerModel: Codable {
 
     var id: Int

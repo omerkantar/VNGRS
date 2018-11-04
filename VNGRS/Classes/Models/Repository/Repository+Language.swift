@@ -42,7 +42,7 @@ extension RepositoryModel {
         return [.swift, .objC, .actionscript, .clojure, .cPlusPlus, .crystal, .dotNet, .elixr, .erlang, .lua, .scala, .lisp, .php, .sql, .python, .ruby, .kotlin, .java,.go]
     }
     
-    static func contain(text: String?) -> Language? {
+    static func language(_ text: String?) -> Language? {
         guard let text = text else { return nil }
         return all.lazy.filter { text.lowercased().contains($0.rawValue.lowercased()) }.first
     }

@@ -11,7 +11,7 @@ import UIKit
 
 extension UICollectionView {
     public enum CellType: QueerCellType {
-        case page
+        case repository
         
         
         var identifier: String {
@@ -20,8 +20,8 @@ extension UICollectionView {
         
         var nibName: String {
             switch self {
-            case .page:
-                return ""
+            case .repository:
+                return String(describing: RepositoryCollectionViewCell.self)
             }
         }
     }

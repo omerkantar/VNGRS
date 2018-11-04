@@ -13,7 +13,6 @@ class SearchViewController: BaseViewController {
 
     @IBOutlet weak var tableView: QueerTableView!
     
-    
     var viewModel = SearchViewModel() 
     
     private lazy var searchComponent = SearchComponent.loadFromNib()
@@ -51,8 +50,11 @@ class SearchViewController: BaseViewController {
         // table view bind edilmesi
         viewModel.repositories.asObservable().subscribe { [weak self] (list) in
             
+            self?.tableView.rowModelOfCellType.removeAll()
+            
             if let count = list.element?.count, count > 0 {
                 // eger varsa bu gozukecek
+                
                 self?.tableView.add(models: self?.viewModel.repositories.value, cellType: .repository)
             } else {
                 // yoksa son aranan eleman

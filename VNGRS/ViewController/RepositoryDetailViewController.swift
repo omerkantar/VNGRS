@@ -12,10 +12,10 @@ import UIKit
 class RepositoryDetailViewController: BaseViewController, RouterDataSourceInjector, ViewModelInjector {
     
     
-    
-
     @IBOutlet weak var component: RepositoryComponent!
-
+    @IBOutlet weak var bottomBar: RepositoryDetailBottomBar!
+    
+    
     // MARK: - ViewModelInjector
     typealias ViewModel = RepositoryDetailViewModel
     var viewModel: RepositoryDetailViewModel?
@@ -24,18 +24,21 @@ class RepositoryDetailViewController: BaseViewController, RouterDataSourceInject
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        DispatchQueue.main.async {
-            if let vm = self.viewModel {
-                self.component.configuration(model: vm)
-            }
+        if let vm = viewModel {
+            self.component.build(viewModel: vm)
+            self.bottomBar.configuration(avatar: vm.avatarViewModel, websiteUrl: vm.model.homepageUrl)
         }
     }
     
     // MARK: - RouterDataSourceInjector
     typealias DataSource = RepositoryDetailRouterData
     func configuration(dataSource: RepositoryDetailRouterData) {
-        viewModel = RepositoryDetailViewModel(model: dataSource.model)
+        self.viewModel = RepositoryDetailViewModel(model: dataSource.model)
     }
 
+    // MARK: - Navigation bar
+    override func isShowingNavigationBar() -> Bool {
+        return true
+    }
 
 }

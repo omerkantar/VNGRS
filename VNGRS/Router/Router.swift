@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 // MARK: - Router data
 protocol RouterDataSource {
@@ -44,6 +45,10 @@ class Router {
             vc.configuration(dataSource: router)
             nc.pushViewController(vc, animated: true)
 
+        case .website(let url):
+            
+            let safariViewController = SFSafariViewController(url: url)
+            nc.present(safariViewController, animated: true, completion: nil)
         }
         
     }

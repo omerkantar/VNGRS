@@ -10,12 +10,10 @@ import UIKit
 
 struct SearchModel: Codable {
 
-    var totalCount: Int = 0
     var incompleteResults: Bool
     var items: [RepositoryModel]?
     
     enum CodingKeys: String, CodingKey {
-        case totalCount = "total_count"
         case incompleteResults = "incomplete_results"
         case items
     }

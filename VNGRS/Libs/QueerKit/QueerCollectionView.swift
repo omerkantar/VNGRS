@@ -58,6 +58,14 @@ class QueerCollectionView: UICollectionView {
     private func realodCollectionView() {
         reloadData()
     }
+    
+    fileprivate func safeCellModel(row: Int) -> Any? {
+        var model: Any? = nil
+        if let models = models, models.count > row {
+            model = models[row]
+        }
+        return model
+    }
 }
 
 // MARK: - CollectionViewDataSource
@@ -68,10 +76,7 @@ extension QueerCollectionView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        var model: Any? = nil
-        if let models = models, models.count > indexPath.row {
-            model = models[indexPath.row]
-        }
+        let model = safeCellModel(row: indexPath.row)
         
         guard let cellType = cellType else {
             return UICollectionViewCell()
@@ -106,6 +111,8 @@ extension QueerCollectionView: UICollectionViewDelegateFlowLayout {
 extension QueerCollectionView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
+        let model = safeCellModel(row: indexPath.row)
+        collectionView.cellForItem(at: indexPath)?.didSelect(model: model)
     }
 }
 

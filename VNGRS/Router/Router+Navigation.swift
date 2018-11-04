@@ -15,5 +15,6 @@ extension Router {
     public enum Navigation {
         case userDetail(name: String)
         case repositoryDetail(model: RepositoryModel)
+        case website(url: URL)
     }
 }

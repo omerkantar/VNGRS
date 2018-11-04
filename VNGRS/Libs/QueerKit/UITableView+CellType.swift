@@ -11,6 +11,7 @@ import UIKit
 extension UITableView {
     public enum CellType: QueerCellType {
         
+        case collection
         case repository
         case keyword
         
@@ -26,6 +27,8 @@ extension UITableView {
                 return String(describing: RepositoryTableViewCell.self)
             case .keyword:
                 return String(describing: KeywordTableViewCell.self)
+            case .collection:
+                return String(describing: CollectionTableViewCell.self)
             }
         }
     }
