@@ -9,38 +9,52 @@
 import UIKit
 
 // Builder Stucture
-struct AttributeStackViewBuilder {
-    var title: String
-    var color: UIColor? = nil
+class AttributeStackViewModel {
+    var title: String?
+    var color: UIColor?
+    var webUrl: String?
+    var icon: UIImage?
+    
+    init(title: String? = nil,
+         color: UIColor? = nil,
+         webUrl: String? = nil,
+         icon: UIImage? = nil) {
+        self.title = title
+        self.color = color
+        self.webUrl = webUrl
+        self.icon = icon
+    }
 }
 
 class RepositoryCellModel {
 
     let model: RepositoryModel
-    var language: AttributeStackViewBuilder?
+    var language: AttributeStackViewModel?
     var avatarViewModel: AvatarComponentViewModel?
+    var forks: AttributeStackViewModel?
+    var stars: AttributeStackViewModel?
+
     var createdDate: String?
-    var fork: AttributeStackViewBuilder?
-    var star: AttributeStackViewBuilder?
-    
+
     init(model: RepositoryModel) {
         self.model = model
         self.createdDate = model.createdAt?.dateString
         
         if let lang = model.language {
             let localLanguage = RepositoryModel.language(lang)
-            self.language = AttributeStackViewBuilder(title: lang, color: localLanguage?.color ?? .red)
+            self.language = AttributeStackViewModel(title: lang, color: localLanguage?.color ?? .red)
         }
+        
         if let owner = model.owner {
             self.avatarViewModel = AvatarComponentViewModel(owner: owner)
         }
         
         if model.numberOfForks > 0 {
-            numberOfForks = AttributeStackViewBuilder(title: "🍴 Forks:\(model.numberOfForks)")
+            self.forks = AttributeStackViewModel(title: model.numberOfForks.numberOfForks)
         }
         
         if model.numberOfStars > 0 {
-            star = AttributeStackViewBuilder(title: "⭐️ Stars:\(model.numberOfStars)")
+            self.stars = AttributeStackViewModel(title: model.numberOfForks.numberOfStars)
         }
     }
     

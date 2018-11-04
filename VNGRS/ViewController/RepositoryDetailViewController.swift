@@ -12,8 +12,6 @@ import UIKit
 class RepositoryDetailViewController: BaseViewController, RouterDataSourceInjector, ViewModelInjector {
     
     
-    
-
     @IBOutlet weak var component: RepositoryComponent!
 
     // MARK: - ViewModelInjector
@@ -24,17 +22,16 @@ class RepositoryDetailViewController: BaseViewController, RouterDataSourceInject
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        DispatchQueue.main.async {
-            if let vm = self.viewModel {
-//                self.component.configuration(model: vm)
-            }
-        }
     }
     
     // MARK: - RouterDataSourceInjector
     typealias DataSource = RepositoryDetailRouterData
     func configuration(dataSource: RepositoryDetailRouterData) {
-        viewModel = RepositoryDetailViewModel(model: dataSource.model)
+        self.viewModel = RepositoryDetailViewModel(model: dataSource.model)
+        DispatchQueue.main.async {
+            self.component.build(viewModel: self.viewModel!)
+        }
+
     }
 
     // MARK: - Navigation bar

@@ -18,34 +18,33 @@ class RepositoryTableViewCell: UITableViewCell {
     @IBOutlet weak var createdDateLabel: UILabel!
     @IBOutlet weak var ownerComponent: AvatarComponent!
     @IBOutlet weak var licenseLabel: UILabel!
-    @IBOutlet weak var forkStackView: AttributeStackView!
     @IBOutlet weak var starStackView: AttributeStackView!
 
-    
     
     var viewModel: RepositoryCellModel?
     
     // Initialization code
     override func awakeFromNib() {
         super.awakeFromNib()
+        selectionStyle = .none
         design()
     }
-
-    
     
     // MARK: - Design
     func design() {
         languageStackView.imageView?.circle()
         ownerComponent.imageView.cornerRadius(12.0)
         ownerComponent.addUserDetailInteraction()
-        languageStackView.isHidden = true
-        forkStackView.isHidden = true
-        starStackView.isHidden = true
-        licenseLabel.isHidden = true
+    }
+    
+    // Animation
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        super.setHighlighted(highlighted, animated: animated)
+        let color: UIColor = highlighted ? .groupTableViewBackground : .white
         
-        let view = UIView(frame: .zero)
-        view.backgroundColor = UIColor.groupTableViewBackground
-        selectedBackgroundView = view
+        UIView.animate(withDuration: 0.2) {
+            self.backgroundColor = color
+        }
     }
     
     
@@ -60,18 +59,12 @@ class RepositoryTableViewCell: UITableViewCell {
 
         ownerComponent.configuration(model: repository.avatarViewModel)
         createdDateLabel.text = repository.createdDate
-        languageStackView.isHidden = true
         if let language = repository.language {
-            languageStackView.isHidden = false
             languageStackView.build(text: language.title, imageColor: language.color)
         }
-        
-        if let license = repository.model.license?.name {
-            self.licenseLabel.isHidden = false
-            self.licenseLabel.text = license
-        } else {
-            self.licenseLabel.isHidden = true
-        }
+        starStackView.build(text: repository.stars?.title)
+        self.licenseLabel.text = repository.model.license?.name
+
     }
     
     
