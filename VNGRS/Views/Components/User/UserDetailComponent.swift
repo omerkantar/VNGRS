@@ -40,7 +40,6 @@ class UserDetailComponent: UIView, QueerViewLoadable {
         self.viewModel = vm
         avatar.configuration(model: vm.avatar)
         createdAtLabel.text = vm.createdAtDate
-        bioLabel.text = vm.model.bio ?? "None bio"
         locationLabel.text = vm.model.location
         companyLabel.text = vm.model.company
         
@@ -48,8 +47,14 @@ class UserDetailComponent: UIView, QueerViewLoadable {
         gistsStackView.build(vm.gists)
         followingsStackView.build(vm.following)
         reposStackView.build(vm.repositories)
-        
+
+        bioLabel.text = vm.model.bio ?? "None bio"
+        bioLabel.numberOfLines = 0
+        bioLabel.sizeToFit()
+
+        self.bioLabel.layoutIfNeeded()
         self.layoutIfNeeded()
+        self.updateConstraints()
     }
     
     

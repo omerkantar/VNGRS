@@ -19,7 +19,7 @@ class RepositoryDetailViewModel: RepositoryCellModel {
         super.init(model: model)
         self.numberOfForks = model.numberOfForks.numberOfForks
         self.numberOfStars = model.numberOfStars.numberOfStars
-        self.numberOfWatchers = model.numberOfWatchers.numberOf(item: "Whatchers:")
+        self.numberOfWatchers = model.numberOfWatchers.numberOfWatchers
         self.defaultBranch = model.defaultBranch
         
     }

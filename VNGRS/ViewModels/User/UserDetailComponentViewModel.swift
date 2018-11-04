@@ -24,7 +24,7 @@ class UserDetailComponentViewModel {
         self.avatar = AvatarComponentViewModel(user: model)
         self.createdAtDate = model.createdAt?.dateString
         
-        self.followers = AttributeStackViewModel(title: model.numberOfFollowers.numberOfForks, webUrl: model.followersUrl)
+        self.followers = AttributeStackViewModel(title: model.numberOfFollowers.numberOfFollowers, webUrl: model.followersUrl)
         
         self.following = AttributeStackViewModel(title: model.numberOfFollowings.numberOfFollowings, webUrl: model.followingUrl)
         self.gists = AttributeStackViewModel(title: model.numberOfGists.numberOfGists, webUrl: model.gitstUrl)

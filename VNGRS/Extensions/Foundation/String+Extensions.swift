@@ -21,7 +21,7 @@ extension String {
 }
 
 extension Int {
-    func numberOf(item: String) -> String? {
+    private func numberOf(item: String) -> String? {
         return self > 0 ? "\(item) \(self)" : nil
     }
     
@@ -33,16 +33,16 @@ extension Int {
         return self > 0 ? numberOf(item: "Stars:") : nil
     }
     
-    var numberOfWhatchers: String? {
-        return self > 0 ? numberOf(item: "Whatchers:") : nil
+    var numberOfWatchers: String? {
+        return self > 0 ? numberOf(item: "Watchers:") : nil
     }
     
     var numberOfFollowings: String? {
         return self > 0 ? numberOf(item: "Followings:") : nil
     }
     
-    var numberOfFollwers: String? {
-        return self > 0 ? numberOf(item: "Follwers:") : nil
+    var numberOfFollowers: String? {
+        return self > 0 ? numberOf(item: "Followers:") : nil
     }
     
     var numberOfGists: String? {

@@ -59,7 +59,7 @@ class RepositoryCollectionViewCell: UICollectionViewCell {
     // MARK: - Highligted
     override var isHighlighted: Bool {
         didSet {
-            let scale: CGFloat = isHighlighted ? 0.9 : 1.0
+            let scale: CGFloat = isHighlighted ? 0.98 : 1.0
             UIView.animate(withDuration: 0.3) {
                 self.container.transform = CGAffineTransform(scaleX: scale, y: scale)
             }
